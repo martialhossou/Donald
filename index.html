@@ -3,29 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Donald Editing — Portfolio & Services de Montage Vidéo</title>
-  <meta name="description" content="Monteur vidéo spécialisé dans la création de contenus dynamiques qui captivent, engagent et convertissent. Devis rapide et portfolio sélectionné." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Donald Editing — Montage Vidéo</title>
+  <meta name="description" content="Monteur vidéo spécialisé dans la création de contenus dynamiques qui captivent et engagent." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* =========================================================
-       🎨 PALETTE & RYTHME
-       IMPORTANT : gardez les couleurs et la disposition d’origine.
-       Ajustez UNIQUEMENT les variables ci-dessous pour coller
-       exactement aux couleurs de donaldediting.com (si nécessaire).
-       ========================================================= */
     :root{
-      --bg: #0b0b0f;          /* fond principal (probablement sombre) */
-      --surface: #111217;     /* surface cartes/sections */
-      --text: #f5f7fb;        /* texte principal */
-      --muted: #a9afc1;       /* texte secondaire */
-      --accent: #ffd000;      /* couleur d’accent (boutons/liens/hover) */
-      --accent-2:#00d8ff;     /* accent secondaire léger si besoin */
-      --border: #23242c;      /* lignes discrètes */
-      --ok: #22c55e;
-      --warn:#f59e0b;
-      --err:#ef4444;
-
+      --bg: #000;             /* fond noir */
+      --surface: #111217;
+      --text: #f5f7fb;
+      --muted: #a9afc1;
+      --accent: #00cfff;      /* bleu ciel */
+      --border: #23242c;
       --radius: 14px;
       --shadow: 0 10px 30px rgba(0,0,0,.25);
       --maxw: 1200px;
@@ -33,457 +21,152 @@
       --pad: clamp(16px, 4vw, 56px);
     }
 
-    /* Reset minimal, typographie & accessibilité */
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    *{box-sizing:border-box;margin:0;padding:0}
     body{
-      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
-      color:var(--text); background:linear-gradient(180deg, #0a0a0e 0%, var(--bg) 60%);
-      line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+      font-family:Inter, sans-serif; background:var(--bg); color:var(--text); line-height:1.6;
     }
-    a{color:inherit; text-decoration:none}
-    img{display:block; max-width:100%; height:auto}
-    .container{max-width:var(--maxw); margin:0 auto; padding:0 var(--pad)}
-    .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 12px; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-weight:600; font-size:12px; letter-spacing:.3px; text-transform:uppercase}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
 
-    /* Header sticky */
     header{
-      position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(12px);
-      background:rgba(11,11,15,.65); border-bottom:1px solid rgba(255,255,255,.04);
+      position:sticky;top:0;z-index:50;
+      background:rgba(0,0,0,.85);border-bottom:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(12px);
     }
-    .nav{
-      height:66px; display:flex; align-items:center; justify-content:space-between; gap:16px;
-    }
-    .brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
-    .brand .logo{
-      width:36px; height:36px; border-radius:9px; background:linear-gradient(135deg,var(--accent),#ff7a00);
-      box-shadow:0 10px 18px rgba(255,187,0,.18), inset 0 0 40px rgba(0,0,0,.25);
-    }
-    .nav a.link{color:var(--muted); font-weight:600}
+    .nav{height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-weight:800;letter-spacing:.2px}
+    nav a{color:var(--muted);margin-left:16px;font-weight:600}
     .cta{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 18px; border-radius:12px;
-      background:var(--accent); color:#111; font-weight:800; letter-spacing:.2px; transition:transform .15s ease, box-shadow .2s ease, opacity .2s ease;
-      box-shadow:0 10px 18px rgba(255,208,0,.18);
+      display:inline-block;padding:12px 18px;border-radius:10px;
+      background:var(--accent);color:#111;font-weight:700;transition:.2s;
     }
-    .cta:hover{transform:translateY(-1px)}
-    .cta.ghost{background:transparent; color:var(--text); border:1px solid var(--border); box-shadow:none}
+    .cta:hover{opacity:.9}
 
-    /* HERO */
-    .hero{
-      padding: clamp(48px, 8vw, 120px) 0;
-      background:
-        radial-gradient(1200px 600px at 80% 0%, rgba(0,216,255,.09), transparent 60%),
-        radial-gradient(900px 500px at 0% 20%, rgba(255,208,0,.12), transparent 60%);
-    }
-    .hero-grid{
-      display:grid; grid-template-columns:1.2fr .8fr; gap:var(--g);
-    }
-    @media (max-width: 900px){ .hero-grid{grid-template-columns:1fr;}}
-    .headline{
-      font-size: clamp(28px, 5vw, 54px); line-height:1.05; font-weight:900; letter-spacing:-.02em;
-    }
-    .sub{
-      color:var(--muted); font-size: clamp(15px, 2.2vw, 18px);
-      max-width:60ch;
-    }
-    .hero-cta{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:18px}
-    .stats{
-      display:flex; gap:24px; flex-wrap:wrap; padding-top:18px; color:var(--muted); font-weight:600;
-    }
-    .stat strong{color:var(--text)}
-    .hero-card{
-      border:1px solid var(--border); background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      border-radius:var(--radius); padding:20px; box-shadow:var(--shadow);
-    }
-    .video{
-      aspect-ratio:16/9; width:100%; border-radius:12px; border:1px solid var(--border); overflow:hidden; background:#000;
-    }
+    section{padding: clamp(48px, 8vw, 96px) 0}
+    h1,h2{font-weight:800;margin-bottom:12px}
+    h1{font-size:clamp(28px,5vw,54px)}
+    h2{font-size:clamp(22px,3.5vw,36px)}
+    p.lead{color:var(--muted);max-width:65ch}
 
-    /* SECTIONS */
-    section{padding: clamp(40px, 7vw, 96px) 0}
-    h2{font-size: clamp(22px, 3.5vw, 36px); line-height:1.1; margin:0 0 8px; letter-spacing:-.01em}
-    .lead{color:var(--muted); max-width:68ch}
+    /* Hero */
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--g)}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+    .video{aspect-ratio:16/9;width:100%;border-radius:12px;border:1px solid var(--border);overflow:hidden;background:#000}
 
-    /* Services */
-    .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--g)}
-    @media (max-width: 900px){ .cards{grid-template-columns:1fr}}
-    .card{
-      border:1px solid var(--border); background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      border-radius:var(--radius); padding:24px; transition:transform .25s ease, border-color .25s ease; position:relative; overflow:hidden;
-    }
+    /* Cards */
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--g);margin-top:24px}
+    .card{background:#111;border:1px solid var(--border);padding:24px;border-radius:var(--radius);transition:.2s}
     .card:hover{transform:translateY(-4px)}
-    .card .kicker{font-weight:800; color:var(--accent); text-transform:uppercase; font-size:12px; letter-spacing:.3px}
+    .card .kicker{color:var(--accent);font-size:13px;font-weight:700;margin-bottom:6px}
     .card p{color:var(--muted)}
-    .chip{display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); border-radius:999px; padding:6px 10px; font-size:12px; color:var(--muted)}
 
-    /* Portfolio grid */
-    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--g)}
-    @media (max-width: 1000px){ .grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width: 640px){ .grid{grid-template-columns:1fr}}
-    .tile{
-      position:relative; overflow:hidden; border-radius:16px; border:1px solid var(--border);
-      background: #0a0a0a; min-height: 220px;
-    }
-    .tile .meta{
-      position:absolute; inset:auto 10px 10px 10px; background:rgba(0,0,0,.55); backdrop-filter: blur(6px);
-      padding:10px 12px; border-radius:12px; color:#fff; font-weight:700; display:flex; justify-content:space-between; align-items:center; gap:12px;
-    }
+    /* Grid Portfolio */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--g);margin-top:24px}
+    .tile{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+    .tile .meta{position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.6);padding:6px 12px;border-radius:8px}
 
-    /* Témoignages (carousel CSS pur) */
-    .carousel{
-      position:relative; overflow:hidden; border:1px solid var(--border); border-radius:var(--radius); background:rgba(255,255,255,.02)
-    }
-    .slides{display:flex; width:300%; animation: slide 24s infinite}
-    .slide{flex:1 0 100%; padding:28px}
-    .quote{font-size:18px}
-    .quote em{color:var(--muted)}
-    @keyframes slide{
-      0%, 28%{transform:translateX(0)}
-      33%, 61%{transform:translateX(-100%)}
-      66%, 94%{transform:translateX(-200%)}
-      100%{transform:translateX(0)}
-    }
+    /* Contact */
+    form{display:grid;gap:16px;margin-top:20px}
+    input,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:10px;background:#0f1015;color:var(--text)}
+    button{border:none}
 
-    /* Process */
-    .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--g)}
-    @media (max-width: 900px){ .steps{grid-template-columns:1fr}}
-    .step{display:flex; gap:14px; align-items:flex-start}
-    .step .num{width:36px; height:36px; border-radius:10px; background:var(--surface); border:1px solid var(--border); display:grid; place-items:center; font-weight:800; color:var(--accent)}
-
-    /* Pricing */
-    .pricing{display:grid; grid-template-columns:repeat(3,1fr); gap:var(--g)}
-    @media (max-width: 1000px){ .pricing{grid-template-columns:1fr}}
-    .plan{border:1px solid var(--border); border-radius:var(--radius); padding:28px; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01))}
-    .plan .price{font-size:38px; font-weight:900}
-    .plan ul{list-style:none; padding:0; margin:16px 0 0}
-    .plan li{display:flex; gap:10px; align-items:flex-start; color:var(--muted); margin:10px 0}
-    .plan li:before{content:"✓"; color:var(--ok); font-weight:900}
-
-    /* FAQ */
-    details{border:1px solid var(--border); border-radius:12px; padding:16px; background:rgba(255,255,255,.02)}
-    details+details{margin-top:12px}
-    summary{cursor:pointer; font-weight:700}
-
-    /* Footer */
-    footer{border-top:1px solid var(--border); color:var(--muted); padding:28px 0 40px}
-
-    /* Utils */
-    .row{display:flex; gap:12px; flex-wrap:wrap}
-    .right{text-align:right}
-    .center{text-align:center}
-    .pill{border:1px solid var(--border); padding:8px 12px; border-radius:999px; color:var(--muted)}
+    footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted);text-align:center}
   </style>
 </head>
 <body>
 
-  <!-- ================= HEADER ================= -->
-  <header>
-    <div class="container nav" role="navigation" aria-label="Navigation principale">
-      <div class="brand">
-        <span class="logo" aria-hidden="true"></span>
-        <span>Donald <span style="opacity:.9">Editing</span></span>
-      </div>
-      <nav class="row" aria-label="Liens de section">
-        <a class="link" href="#services">Services</a>
-        <a class="link" href="#portfolio">Portfolio</a>
-        <a class="link" href="#temoignages">Avis</a>
-        <a class="link" href="#tarifs">Tarifs</a>
-        <a class="link" href="#contact">Contact</a>
-      </nav>
-      <a class="cta" href="#contact" aria-label="Demander un devis">Demander un devis</a>
-    </div>
-  </header>
+<header>
+  <div class="container nav">
+    <div class="brand">Donald Editing</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="cta" href="#contact">Demander un devis</a>
+  </div>
+</header>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero" id="accueil">
-    <div class="container hero-grid">
-      <div>
-        <span class="tag">Portfolio officiel</span>
-        <h1 class="headline" style="margin:14px 0 12px">
-          Je m'appelle <span style="color:var(--accent)">Donald AHOUANMADJO</span>, monteur vidéo spécialisé dans la création de contenus dynamiques qui <span style="text-decoration:underline; text-decoration-color:var(--accent)">captivent</span>, <span style="text-decoration:underline; text-decoration-color:var(--accent)">engagent</span> et <span style="text-decoration:underline; text-decoration-color:var(--accent)">convertissent</span>.
-        </h1>
-        <p class="sub">Depuis 2023, j’accompagne marques, créateurs et organisations pour transformer des idées en vidéos percutantes (Reels, Shorts, YouTube, publicités, événements…). Livraison rapide, échanges clairs, et obsession du détail.</p>
-        <div class="hero-cta">
-          <a class="cta" href="#portfolio">Voir le portfolio</a>
-          <a class="cta ghost" href="#services">Explorer les services</a>
-          <span class="pill">Réponse sous 24h</span>
-        </div>
-        <div class="stats">
-          <span class="stat"><strong>100+</strong> vidéos livrées</span>
-          <span class="stat"><strong>20+</strong> clients satisfaits</span>
-          <span class="stat"><strong>4.9/5</strong> avis moyens</span>
-        </div>
-      </div>
-
-      <aside class="hero-card" aria-label="Showreel & points forts">
-        <div class="video" aria-label="Showreel (remplacez l’URL ci-dessous)">
-          <!-- 👉 Remplacez par un lien YouTube/Vimeo si disponible -->
-          <iframe title="Showreel Donald Editing"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  width="100%" height="100%" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen loading="lazy"></iframe>
-        </div>
-        <ul style="margin:16px 0 0; padding:0 0 0 18px; color:var(--muted)">
-          <li>Montage court & long format</li>
-          <li>Sous-titrage, habillages & rythmiques</li>
-          <li>Optimisation rétention & hook 3s</li>
-        </ul>
-      </aside>
-    </div>
-  </section>
-
-  <!-- ================= SERVICES ================= -->
-  <section id="services">
-    <div class="container">
-      <h2>Services</h2>
-      <p class="lead">Des prestations de montage claires et efficaces. La qualité, la vitesse d’exécution et la cohérence de marque sont au cœur du process.</p>
-
-      <div class="cards" style="margin-top:24px">
-        <article class="card">
-          <div class="kicker">Montage Social</div>
-          <h3 style="margin:8px 0 6px">Reels • Shorts • TikTok</h3>
-          <p>Rythme accrocheur, sous-titres stylés, cuts propres et transitions fluides pour maximiser la rétention et les conversions.</p>
-          <div class="row" style="margin-top:10px">
-            <span class="chip">Hook & storytelling</span>
-            <span class="chip">Sous-titres</span>
-            <span class="chip">Branding</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="kicker">YouTube</div>
-          <h3 style="margin:8px 0 6px">Vlogs • Interviews • Émissions</h3>
-          <p>Structure claire (intro, chapitrage), habillage graphique léger, équilibre rythme/confort pour une expérience premium.</p>
-          <div class="row" style="margin-top:10px">
-            <span class="chip">Chapitres</span>
-            <span class="chip">Habillage</span>
-            <span class="chip">Thumbnails</span>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="kicker">Business</div>
-          <h3 style="margin:8px 0 6px">Ads • Corporate • Événementiel</h3>
-          <p>Formats orientés objectifs (ventes, RDV, notoriété). Sélection des meilleurs rushs, messages clairs et appels à l’action visibles.</p>
-          <div class="row" style="margin-top:10px">
-            <span class="chip">A/B hooks</span>
-            <span class="chip">Motion léger</span>
-            <span class="chip">Livraison rapide</span>
-          </div>
-        </article>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>Donald Editing, monteur vidéo spécialisé dans la création de contenus dynamiques qui captivent et engagent.</h1>
+      <p class="lead">Depuis 2023, j’accompagne marques et créateurs pour transformer des idées en vidéos percutantes : Reels, Shorts, YouTube, publicités.</p>
+      <div style="margin-top:20px">
+        <a class="cta" href="#portfolio">Voir le portfolio</a>
       </div>
     </div>
-  </section>
+    <div class="video">
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Showreel" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
 
-  <!-- ================= PORTFOLIO ================= -->
-  <section id="portfolio">
-    <div class="container">
-      <h2>Portfolio</h2>
-      <p class="lead">Sélection de projets récents. <span style="color:var(--accent)">Astuce :</span> passez la souris pour voir le titre et le type de projet.</p>
-
-      <div class="grid" style="margin-top:24px">
-        <!-- 👉 Remplacez les images par vos vignettes de projets -->
-        <a class="tile" href="#" aria-label="Projet 1">
-          <img src="https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?q=80&w=1400&auto=format&fit=crop" alt="Extrait de montage 1">
-          <div class="meta"><span>Interview YouTube</span><span>▶</span></div>
-        </a>
-        <a class="tile" href="#" aria-label="Projet 2">
-          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1400&auto=format&fit=crop" alt="Extrait de montage 2">
-          <div class="meta"><span>Short TikTok</span><span>▶</span></div>
-        </a>
-        <a class="tile" href="#" aria-label="Projet 3">
-          <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1400&auto=format&fit=crop" alt="Extrait de montage 3">
-          <div class="meta"><span>Pub Instagram</span><span>▶</span></div>
-        </a>
-        <a class="tile" href="#" aria-label="Projet 4">
-          <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1400&auto=format&fit=crop" alt="Extrait de montage 4">
-          <div class="meta"><span>Aftermovie</span><span>▶</span></div>
-        </a>
-        <a class="tile" href="#" aria-label="Projet 5">
-          <img src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?q=80&w=1400&auto=format&fit=crop" alt="Extrait de montage 5">
-          <div class="meta"><span>UGC Produit</span><span>▶</span></div>
-        </a>
-        <a class="tile" href="#" aria-label="Projet 6">
-          <img src="https://images.unsplash.com/photo-1542759564-7ccbb6dc5df2?q=80&w=1400&auto=format&fit=crop" alt="Extrait de montage 6">
-          <div class="meta"><span>Clip Court</span><span>▶</span></div>
-        </a>
+<section id="services">
+  <div class="container">
+    <h2>Services</h2>
+    <p class="lead">Des prestations de montage claires et efficaces.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="kicker">Montage Social</div>
+        <h3>Reels • Shorts • TikTok</h3>
+        <p>Rythme accrocheur, sous-titres stylés, transitions fluides pour maximiser la rétention.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">YouTube</div>
+        <h3>Vlogs • Interviews • Émissions</h3>
+        <p>Structure claire, habillage graphique léger, confort de visionnage premium.</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Business</div>
+        <h3>Ads • Corporate • Événementiel</h3>
+        <p>Formats orientés résultats : ventes, rendez-vous, notoriété.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ================= TEMOIGNAGES ================= -->
-  <section id="temoignages">
-    <div class="container">
-      <h2>Avis clients</h2>
-      <p class="lead">La satisfaction est la meilleure preuve. Voici quelques retours reçus après livraison.</p>
-      <div class="carousel" style="margin-top:24px">
-        <div class="slides">
-          <div class="slide">
-            <p class="quote">« Super réactivité et très pro sur l’habillage et le rythme. Le résultat a boosté nos vues ! » <br><em>— Responsable Marketing</em></p>
-          </div>
-          <div class="slide">
-            <p class="quote">« Donald a compris la ligne éditoriale dès le premier jet. Communication fluide, livrable nickel. » <br><em>— Créatrice de contenu</em></p>
-          </div>
-          <div class="slide">
-            <p class="quote">« Montage propre, sous-titres impeccables, et respect des délais serrés. On recommande. » <br><em>— Agence Social Media</em></p>
-          </div>
-        </div>
+<section id="portfolio">
+  <div class="container">
+    <h2>Portfolio</h2>
+    <p class="lead">Sélection de projets récents.</p>
+    <div class="grid">
+      <div class="tile">
+        <img src="https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?q=80&w=1400" alt="">
+        <div class="meta">Projet 1</div>
+      </div>
+      <div class="tile">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1400" alt="">
+        <div class="meta">Projet 2</div>
+      </div>
+      <div class="tile">
+        <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1400" alt="">
+        <div class="meta">Projet 3</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ================= PROCESS ================= -->
-  <section id="process">
-    <div class="container">
-      <h2>Process simple & efficace</h2>
-      <div class="steps" style="margin-top:18px">
-        <div class="step">
-          <div class="num">1</div>
-          <div><strong>Brief</strong><br><span class="muted">Objectif, cible, format, exemples d’inspiration.</span></div>
-        </div>
-        <div class="step">
-          <div class="num">2</div>
-          <div><strong>Montage & retours</strong><br><span class="muted">Premier cut + 1 à 2 itérations rapides.</span></div>
-        </div>
-        <div class="step">
-          <div class="num">3</div>
-          <div><strong>Livraison</strong><br><span class="muted">Export optimisé par plateforme + assets.</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="lead">Parlez-moi de votre projet. Réponse sous 24h.</p>
+    <form>
+      <input type="text" name="name" placeholder="Votre nom" required>
+      <input type="email" name="email" placeholder="Votre email" required>
+      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+      <button class="cta" type="submit">Envoyer</button>
+    </form>
+  </div>
+</section>
 
-  <!-- ================= TARIFS ================= -->
-  <section id="tarifs">
-    <div class="container">
-      <h2>Tarifs indicatifs</h2>
-      <p class="lead">Chaque projet est unique. Ces fourchettes servent de repère et s’ajustent selon la durée, la complexité et les options.</p>
+<footer>
+  <div class="container">
+    © <span id="year"></span> Donald Editing — Tous droits réservés.
+  </div>
+</footer>
 
-      <div class="pricing" style="margin-top:24px">
-        <article class="plan" aria-label="Plan Social">
-          <div class="tag">Social</div>
-          <div class="price">à partir de 40€</div>
-          <ul>
-            <li>Format 15–60s (Reel/Short)</li>
-            <li>Sous-titres & cuts dynamiques</li>
-            <li>1 aller-retour inclus</li>
-          </ul>
-          <div style="margin-top:18px" class="row">
-            <a class="cta" href="#contact">Demander un devis</a>
-            <span class="pill">Livraison rapide</span>
-          </div>
-        </article>
-
-        <article class="plan" aria-label="Plan YouTube">
-          <div class="tag">YouTube</div>
-          <div class="price">à partir de 120€</div>
-          <ul>
-            <li>Format 3–12 min</li>
-            <li>Chapitres & habillage léger</li>
-            <li>2 allers-retours inclus</li>
-          </ul>
-          <div style="margin-top:18px" class="row">
-            <a class="cta" href="#contact">Demander un devis</a>
-            <span class="pill">Qualité éditoriale</span>
-          </div>
-        </article>
-
-        <article class="plan" aria-label="Plan Business">
-          <div class="tag">Business</div>
-          <div class="price">sur devis</div>
-          <ul>
-            <li>Publicités, événementiel, corporate</li>
-            <li>Optimisation objectif (conversion/rdv)</li>
-            <li>Options motion & voix off</li>
-          </ul>
-          <div style="margin-top:18px" class="row">
-            <a class="cta" href="#contact">Parler du projet</a>
-            <span class="pill">Accompagnement</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FAQ ================= -->
-  <section id="faq">
-    <div class="container">
-      <h2>FAQ</h2>
-      <details>
-        <summary>Quels formats de fichiers livrez-vous ?</summary>
-        <p>MP4 (H.264/H.265) optimisé selon la plateforme (Instagram, TikTok, YouTube). Export ProRes possible sur demande.</p>
-      </details>
-      <details>
-        <summary>Pouvez‑vous ajouter des sous‑titres stylés et des chapitres ?</summary>
-        <p>Oui, sous-titres synchronisés et incrustés, chapitrage pour YouTube, incrustations légères conformes à votre charte.</p>
-      </details>
-      <details>
-        <summary>Quid des délais ?</summary>
-        <p>Variable selon la complexité. Un short simple peut être livré sous 24–48h après réception des rushs.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- ================= CONTACT ================= -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p class="lead">Parlez‑moi de votre projet (objectif, format, échéance). Je vous réponds rapidement avec un devis clair.</p>
-
-      <form class="card" style="margin-top:18px" action="https://formspree.io/f/your-id" method="POST">
-        <div class="row">
-          <div style="flex:1; min-width:220px">
-            <label for="name">Votre nom</label>
-            <input id="name" name="name" required placeholder="Nom Prénom" style="width:100%; margin-top:6px; padding:12px 14px; border-radius:10px; border:1px solid var(--border); background:#0f1015; color:var(--text)">
-          </div>
-          <div style="flex:1; min-width:220px">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="vous@domaine.com" style="width:100%; margin-top:6px; padding:12px 14px; border-radius:10px; border:1px solid var(--border); background:#0f1015; color:var(--text)">
-          </div>
-        </div>
-        <div class="row">
-          <div style="flex:1; min-width:220px">
-            <label for="subject">Sujet</label>
-            <input id="subject" name="subject" placeholder="Ex: Montage 3 Reels par semaine" style="width:100%; margin-top:6px; padding:12px 14px; border-radius:10px; border:1px solid var(--border); background:#0f1015; color:var(--text)">
-          </div>
-          <div style="flex:1; min-width:220px">
-            <label for="deadline">Échéance</label>
-            <input id="deadline" name="deadline" placeholder="Ex: 25/08/2025" style="width:100%; margin-top:6px; padding:12px 14px; border-radius:10px; border:1px solid var(--border); background:#0f1015; color:var(--text)">
-          </div>
-        </div>
-        <div>
-          <label for="message">Votre message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Objectif, public cible, plateformes, liens d’inspiration…" style="width:100%; margin-top:6px; padding:12px 14px; border-radius:10px; border:1px solid var(--border); background:#0f1015; color:var(--text)"></textarea>
-        </div>
-        <div class="row" style="align-items:center; justify-content:space-between; margin-top:8px">
-          <label class="row" style="gap:8px; color:var(--muted); align-items:center">
-            <input type="checkbox" name="consent" required>
-            <span>Je consens au traitement de mes données pour répondre à ma demande</span>
-          </label>
-          <button class="cta" type="submit">Envoyer la demande</button>
-        </div>
-      </form>
-
-      <p class="lead" style="margin-top:16px">
-        Aussi joignable sur Instagram : <a href="https://www.instagram.com/donald_editing/" target="_blank" rel="noopener" style="color:var(--accent)">@donald_editing</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- ================= FOOTER ================= -->
-  <footer>
-    <div class="container row" style="align-items:center; justify-content:space-between">
-      <div>© <span id="year"></span> Donald Editing — Tous droits réservés.</div>
-      <div class="row">
-        <a class="link" href="#accueil">Haut de page</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Petite amélioration UX (année dynamique)
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
 </body>
 </html>
