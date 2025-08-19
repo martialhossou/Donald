@@ -3,268 +3,313 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Donald Editing — Monteur vidéo freelance (YouTube, Réels, VSL)</title>
-  <meta name="description" content="Monteur vidéo freelance : YouTube, Réels/Shorts, VSL, publicités et vidéos corporate. Délais rapides, sous‑titres dynamiques, exports optimisés 4K/1080p." />
+  <title>DONALD EDITING — Monteur vidéo pro (VSL, Réels/Shorts, YouTube)</title>
+  <meta name="description" content="Des vidéos qui retiennent, convainquent et vendent. VSL, Réels/Shorts, YouTube (long format). Montage précis, sous‑titres dynamiques, livraisons rapides. Devis express." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="DONALD EDITING — Monteur vidéo pro" />
+  <meta property="og:description" content="Des vidéos qui retiennent, convainquent et vendent. VSL, Réels/Shorts, YouTube." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://donaldediting.com/" />
+  <meta property="og:image" content="https://donaldediting.com/wp-content/uploads/2025/08/cropped-profil-photo-2-scaled-1-300x300.jpg" />
+
+  <!-- Favicon (optionnel) -->
   <link rel="icon" href="/favicon.ico" />
+
+  <!-- Fonts haut de gamme -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --bg: #0a0c12;
-      --surface: #111423;
-      --muted: #a2adbd;
-      --text: #eaf0ff;
-      --primary: #67b2ff; /* accent */
-      --accent: #96f7d2;  /* accent secondaire */
-      --radius: 18px;
-      --maxw: 1160px;
-      --gap: clamp(1rem, 2vw, 1.2rem);
-      --pad: clamp(1rem, 3vw, 2rem);
-      --shadow: 0 10px 28px rgba(0,0,0,.25);
+    :root{
+      --bg:#0a0c12;          /* fond noir profond */
+      --surface:#101422;     /* panneaux */
+      --muted:#aab4c2;       /* texte secondaire */
+      --text:#eaf0ff;        /* texte principal */
+      --primary:#67b2ff;     /* bleu ciel */
+      --radius:18px; --maxw:1160px; --shadow:0 12px 30px rgba(0,0,0,.28);
+      --gap:clamp(.9rem,2vw,1.1rem); --pad:clamp(1rem,3vw,2rem);
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;line-height:1.6;color:var(--text);background:
-      radial-gradient(1200px 600px at 80% -10%, rgba(103,178,255,.12), transparent 60%),
-      radial-gradient(900px 500px at -10% 110%, rgba(150,247,210,.08), transparent 60%),
-      var(--bg)}
+    body{margin:0; background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(103,178,255,.10), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(103,178,255,.05), transparent 60%), var(--bg);
+      color:var(--text); line-height:1.6; font-family:"Plus Jakarta Sans",ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial;
+    }
+    h1,h2{font-family:"Playfair Display", serif; letter-spacing:.2px}
     a{text-decoration:none;color:inherit}
-    .container{width:min(100% - 2rem, var(--maxw));margin-inline:auto}
+    .container{width:min(100% - 2rem, var(--maxw)); margin-inline:auto}
 
-    /* ===== Header ===== */
-    header{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--surface) 74%, transparent);backdrop-filter:blur(10px) saturate(150%);border-bottom:1px solid rgba(255,255,255,.07)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
-    .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.2px}
-    .brand svg{width:28px;height:28px}
-    nav ul{display:flex;align-items:center;gap:.6rem;margin:0;padding:0;list-style:none}
-    nav a{padding:.55rem .8rem;border-radius:999px;opacity:.9}
-    nav a:hover, nav a[aria-current="page"]{background:rgba(255,255,255,.08);opacity:1}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1rem;border-radius:999px;font-weight:800;background:linear-gradient(180deg,var(--primary),color-mix(in srgb,var(--primary),#000 18%));color:#07152a;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow)}
-    .btn:hover{transform:translateY(-1px);box-shadow:0 16px 36px rgba(103,178,255,.28)}
-    .btn.secondary{background:#151a2b;color:var(--text);box-shadow:none}
+    /* Header */
+    header{position:sticky; top:0; z-index:50; backdrop-filter: blur(10px) saturate(150%);
+      background: color-mix(in srgb, var(--surface) 74%, transparent);
+      border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:.8rem 0}
+    .brand{display:flex; align-items:center; gap:.6rem; font-weight:800}
+    .brand svg{width:28px; height:28px}
+    nav ul{display:flex; align-items:center; gap:.6rem; margin:0; padding:0; list-style:none}
+    nav a{padding:.55rem .8rem; border-radius:999px; opacity:.92}
+    nav a:hover, nav a[aria-current="page"]{background:rgba(255,255,255,.08); opacity:1}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 1rem; border-radius:999px; font-weight:800;
+      background: linear-gradient(180deg, var(--primary), color-mix(in srgb, var(--primary), #000 18%)); color:#07152a;
+      border:1px solid rgba(255,255,255,.12); box-shadow:var(--shadow)}
+    .btn:hover{transform:translateY(-1px); box-shadow:0 16px 36px rgba(103,178,255,.28)}
+    .btn.secondary{background:#151a2b; color:var(--text); box-shadow:none}
 
-    /* ===== Hero ===== */
+    /* Hero */
     .hero{padding:calc(var(--pad)*2.2) 0}
-    .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--gap);align-items:center}
-    .eyebrow{color:var(--muted);font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:.8rem}
-    h1{font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.12;margin:.5rem 0 1rem}
-    .lead{color:#cfe3ff;font-size:clamp(1rem,2.2vw,1.15rem);margin:0 0 1.1rem}
-    .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem}
-    .card{background:linear-gradient(180deg,color-mix(in srgb,var(--surface) 92%, transparent), color-mix(in srgb,var(--surface) 86%, transparent));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:1.1rem;box-shadow:var(--shadow)}
-    .media{aspect-ratio:16/9;border-radius:calc(var(--radius) - 8px);background:#0e1320;border:1px solid rgba(255,255,255,.06);overflow:hidden;display:grid;place-items:center}
-    .media img{width:100%;height:100%;object-fit:cover;display:block}
-    .media small{color:var(--muted)}
+    .wrap{display:grid; grid-template-columns: 1.1fr .9fr; gap:var(--gap); align-items:center}
+    .eyebrow{color:var(--muted); font-weight:800; letter-spacing:.22em; text-transform:uppercase; font-size:.8rem}
+    h1{font-size:clamp(2rem,4.8vw,3.2rem); line-height:1.1; margin:.5rem 0 1rem}
+    .lead{color:#d9e6ff; font-size:clamp(1rem,2.2vw,1.15rem); margin:0 0 1.1rem}
+    .hero-cta{display:flex; flex-wrap:wrap; gap:.8rem}
+    .card{background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 92%, transparent), color-mix(in srgb, var(--surface) 86%, transparent));
+      border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:1.1rem; box-shadow:var(--shadow)}
+    .media{aspect-ratio:16/9; border-radius:calc(var(--radius) - 8px); background:#0e1320; border:1px solid rgba(255,255,255,.06);
+      overflow:hidden; display:grid; place-items:center}
+    .media img{width:100%; height:100%; object-fit:cover; display:block}
 
-    /* ===== Sections ===== */
+    /* Sections */
     section{padding:calc(var(--pad)*2) 0}
-    .section-title{font-size:clamp(1.35rem,3.2vw,1.9rem);margin:0 0 .6rem}
-    .section-desc{color:var(--muted);margin:0 0 1.2rem}
-
-    .grid{display:grid;gap:var(--gap)}
+    .section-title{font-size:clamp(1.35rem,3.2vw,2rem); margin:0 0 .6rem}
+    .section-desc{color:var(--muted); margin:0 0 1.1rem}
+    .grid{display:grid; gap:var(--gap)}
     .grid-3{grid-template-columns:repeat(3,1fr)}
     .grid-2{grid-template-columns:repeat(2,1fr)}
-    .feature{display:grid;grid-template-columns:48px 1fr;gap:.9rem;align-items:start;padding:1rem;border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);background:#0f1526}
-    .feature svg{width:32px;height:32px}
+    .feature{display:grid; grid-template-columns:48px 1fr; gap:.9rem; align-items:start; padding:1rem; border:1px solid rgba(255,255,255,.1);
+      border-radius:var(--radius); background:#0f1526}
+    .feature svg{width:32px; height:32px}
     .muted{color:var(--muted)}
-
-    /* Badges */
-    .badges{display:flex;flex-wrap:wrap;gap:.5rem}
-    .badge{padding:.4rem .7rem;border-radius:999px;background:#121a2d;border:1px solid rgba(255,255,255,.1);font-size:.92rem;color:#cdd9f6}
+    .badges{display:flex; flex-wrap:wrap; gap:.5rem}
+    .badge{padding:.4rem .7rem; border-radius:999px; background:#121a2d; border:1px solid rgba(255,255,255,.1); font-size:.92rem; color:#cdd9f6}
 
     /* Steps */
     .steps{counter-reset:step}
-    .step{position:relative;padding:1.15rem;border:1px dashed rgba(255,255,255,.18);border-radius:var(--radius);background:#0f1526}
-    .step::before{counter-increment:step;content:counter(step);position:absolute;top:-12px;left:-12px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--primary);color:#07152a;font-weight:900;box-shadow:var(--shadow)}
+    .step{position:relative; padding:1.15rem; border:1px dashed rgba(255,255,255,.18); border-radius:var(--radius); background:#0f1526}
+    .step::before{counter-increment:step; content:counter(step); position:absolute; top:-12px; left:-12px; width:36px; height:36px; border-radius:50%; display:grid; place-items:center;
+      background:var(--primary); color:#07152a; font-weight:900; box-shadow:var(--shadow)}
 
     /* Quotes */
-    .quote{padding:1.1rem;border-left:4px solid var(--primary);background:#0f1526;border-radius:var(--radius)}
-    .quote footer{margin-top:.55rem;color:var(--muted)}
-
-    /* Pricing (optionnel) */
-    .price{font-size:1.6rem;font-weight:900}
+    .quote{padding:1.1rem; border-left:4px solid var(--primary); background:#0f1526; border-radius:var(--radius)}
+    .quote footer{margin-top:.55rem; color:var(--muted)}
 
     /* Contact */
-    .contact-card{display:grid;gap:.8rem}
-    .row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
-    .chip{padding:.45rem .7rem;border-radius:999px;background:#121a2d;border:1px solid rgba(255,255,255,.1);font-size:.95rem}
+    .contact-card{display:grid; gap:.8rem}
+    .row{display:flex; flex-wrap:wrap; gap:.6rem; align-items:center}
+    .chip{padding:.45rem .7rem; border-radius:999px; background:#121a2d; border:1px solid rgba(255,255,255,.1); font-size:.95rem}
+
+    /* Reveal animations */
+    [data-animate]{opacity:0; transform:translateY(14px); transition:.6s ease;}
+    .in{opacity:1 !important; transform:none !important}
 
     /* Footer */
-    footer{padding:1.6rem 0 2.4rem;color:var(--muted);border-top:1px solid rgba(255,255,255,.1)}
+    footer{padding:1.6rem 0 2.4rem; color:var(--muted); border-top:1px solid rgba(255,255,255,.1)}
 
     /* Responsive */
-    @media (max-width: 1024px){.wrap, .grid-3, .grid-2{grid-template-columns:1fr}}
+    @media (max-width:1024px){.wrap,.grid-3,.grid-2{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <!-- ===== HEADER ===== -->
+  <!-- ================= HEADER ================= -->
   <header>
     <div class="container nav" role="navigation" aria-label="Navigation principale">
-      <a class="brand" href="#top" aria-label="Accueil Donald Editing">
+      <a class="brand" href="#accueil" aria-label="Accueil DONALD EDITING">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 7a3 3 0 0 1 3-3h2l1-1h4l1 1h2a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7Z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="11" r="3.6" stroke="currentColor" stroke-width="1.5"/></svg>
-        <span>Donald Editing</span>
+        <span>DONALD EDITING</span>
       </a>
       <nav>
         <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">Qui suis‑je</a></li>
+          <li><a href="#specialites">Spécialités</a></li>
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#temoignages">Témoignages</a></li>
           <li><a href="#process">Processus</a></li>
-          <li><a href="#outils">Outils</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="btn" href="#contact">Devis rapide</a></li>
+          <li><a class="btn" href="#contact">Devis express</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <main id="top">
+  <!-- ================= HERO ================= -->
+  <main id="accueil">
     <section class="hero container" aria-label="Section de bienvenue">
       <div class="wrap">
-        <div>
-          <p class="eyebrow">Monteur vidéo freelance</p>
-          <h1>Des vidéos qui retiennent l’attention et convertissent.</h1>
-          <p class="lead">YouTube long format, Réels/Shorts 9:16, VSL et publicités. <strong>Délais rapides</strong>, <strong>sous‑titres dynamiques</strong>, <strong>exports 4K/1080p</strong> et <strong>branding cohérent</strong>.</p>
+        <div data-animate>
+          <p class="eyebrow">Monteur vidéo professionnel</p>
+          <h1>Des vidéos qui retiennent, convainquent et <span style="background:linear-gradient(90deg,var(--primary),#a3d4ff);-webkit-background-clip:text;background-clip:text;color:transparent">vendent</span>.</h1>
+          <p class="lead">VSL, Réels/Shorts et formats longs YouTube. Montage précis, sous‑titres dynamiques, design sonore soigné et branding cohérent. <strong>Livraisons rapides</strong> et <strong>process cadré</strong> pour un résultat premium.</p>
           <div class="hero-cta">
-            <a href="#portfolio" class="btn" aria-label="Voir le portfolio">Voir le portfolio</a>
+            <a href="#realisations" class="btn" aria-label="Voir le portfolio">Voir le portfolio</a>
             <a href="#contact" class="btn secondary" aria-label="Demander un devis">Demander un devis</a>
           </div>
           <div class="badges" style="margin-top:.9rem">
             <span class="badge">YouTube</span>
             <span class="badge">Instagram/TikTok</span>
-            <span class="badge">Publicités & VSL</span>
-            <span class="badge">Motion & Titres</span>
+            <span class="badge">Vidéos de vente (VSL)</span>
+            <span class="badge">Sous‑titres & Motion</span>
           </div>
         </div>
-        <div class="card">
+        <div class="card" data-animate>
           <div class="media">
-            <img src="https://images.unsplash.com/photo-1581276879432-15a09f2f9c30?q=80&w=1600&auto=format&fit=crop" alt="Extraits de montages vidéo (mosaïque)"/>
+            <img src="https://donaldediting.com/wp-content/uploads/2025/08/cropped-profil-photo-2-scaled-1-300x300.jpg" alt="Portrait de Donald AHOUANMADJO — monteur vidéo"/>
           </div>
-          <p class="muted" style="margin-top:.7rem">Aperçu : mosaïque d’extraits (avant ➜ après). Remplacez par votre reel démonstration.</p>
+          <p class="muted" style="margin-top:.7rem">Donald AHOUANMADJO • Monteur vidéo pro</p>
         </div>
       </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
-    <section id="services" class="container" aria-labelledby="title-services">
-      <h2 id="title-services" class="section-title">Services</h2>
-      <p class="section-desc">Des prestations claires, adaptées à vos objectifs et à votre audience.</p>
-      <div class="grid grid-3">
-        <article class="feature" aria-label="Montage YouTube">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7Z" stroke="currentColor" stroke-width="1.5"/><path d="M10 9.5v5l4-2.5-4-2.5Z" fill="currentColor"/></svg>
-          <div>
-            <h3>Montage YouTube</h3>
-            <p class="muted">Narration soignée, B‑roll pertinent, titrage lisible. Optimisé pour la rétention et le watch‑time.</p>
-            <p class="price">à partir de 50 000 F CFA</p>
-          </div>
-        </article>
-        <article class="feature" aria-label="Réels / Shorts">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M9 7h6M9 12h6M9 17h4" stroke="currentColor" stroke-width="1.5"/></svg>
-          <div>
-            <h3>Réels & Shorts</h3>
-            <p class="muted">Formats 9:16, cuts rapides, sous‑titres animés. Pensé pour capter en 3 secondes et engager.</p>
-            <p class="price">à partir de 15 000 F CFA</p>
-          </div>
-        </article>
-        <article class="feature" aria-label="Vidéos de vente (VSL)">
+    <!-- ================= QUI SUIS-JE & OBJECTIF ================= -->
+    <section id="about" class="container" aria-labelledby="title-about">
+      <h2 id="title-about" class="section-title" data-animate>Qui suis‑je ?</h2>
+      <p class="section-desc" data-animate>
+        Je m’appelle <strong>Donald AHOUANMADJO</strong>, monteur vidéo spécialisé dans la création de contenus dynamiques qui captivent, engagent et convertissent. Depuis 2023, j’accompagne coachs, créateurs et infopreneurs à transformer leurs idées en vidéos claires, percutantes et alignées sur leurs objectifs business.
+      </p>
+      <div class="grid grid-2">
+        <div class="feature" data-animate>
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h8" stroke="currentColor" stroke-width="1.5"/><path d="M17 17v4l3-2-3-2Z" fill="currentColor"/></svg>
           <div>
-            <h3>Vidéos de vente (VSL)</h3>
-            <p class="muted">Structure persuasive, CTA clairs, montages sobres orientés conversion pour pages et pubs.</p>
-            <p class="price">à partir de 80 000 F CFA</p>
+            <h3>Mon objectif</h3>
+            <p class="muted">Vous aider à <strong>attirer l’attention</strong>, <strong>gagner la confiance</strong> et <strong>convertir</strong> vos clients grâce à un montage professionnel, fluide et stratégique — pensé pour la rétention et l’action.</p>
           </div>
-        </article>
-      </div>
-      <div class="badges" style="margin-top:1rem">
-        <span class="badge">Livrables : 4K / 1080p • .mp4 H.264/H.265</span>
-        <span class="badge">Sous‑titres : intégrés & .srt</span>
-        <span class="badge">Musique & SFX libres de droits</span>
-        <span class="badge">2 cycles de retours inclus</span>
+        </div>
+        <div class="feature" data-animate>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7Z" stroke="currentColor" stroke-width="1.5"/><path d="M10 9.5v5l4-2.5-4-2.5Z" fill="currentColor"/></svg>
+          <div>
+            <h3>Mes spécialités</h3>
+            <p class="muted">Vidéos de vente (<strong>VSL</strong>), <strong>Réels/Shorts</strong> 9:16 et <strong>vidéos YouTube</strong> (formats longs). Sous‑titres animés, cuts précis, B‑roll, titrage lisible et habillages propres.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ===== PORTFOLIO ===== -->
-    <section id="portfolio" class="container" aria-labelledby="title-portfolio">
-      <h2 id="title-portfolio" class="section-title">Portfolio</h2>
-      <p class="section-desc">Sélection de projets récents — remplacez les vignettes par vos propres médias et liens.</p>
+    <!-- ================= SPECIALITES (puces) ================= -->
+    <section id="specialites" class="container" aria-labelledby="title-spec">
+      <h2 id="title-spec" class="section-title" data-animate>Spécialités</h2>
+      <p class="section-desc" data-animate>Conçues pour capter en 3 s, maintenir la rétention et pousser à l’action.</p>
       <div class="grid grid-3">
-        <a class="card" href="#" aria-label="Voir la vidéo YouTube — tutoriel tech" target="_blank" rel="noopener">
-          <div class="media"><img src="https://images.unsplash.com/photo-1512412046876-f386342eddb3?q=80&w=1600&auto=format&fit=crop" alt="YouTube — tutoriel tech"/></div>
-          <p class="muted">YouTube — Tutoriel tech (12 min)</p>
-        </a>
-        <a class="card" href="#" aria-label="Voir le Réel produit" target="_blank" rel="noopener">
-          <div class="media"><img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1600&auto=format&fit=crop" alt="Réel produit format 9:16"/></div>
-          <p class="muted">Réel produit — 9:16 (25 s)</p>
-        </a>
-        <a class="card" href="#" aria-label="Voir l’extrait VSL" target="_blank" rel="noopener">
-          <div class="media"><img src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?q=80&w=1600&auto=format&fit=crop" alt="Extrait VSL pour page de vente"/></div>
-          <p class="muted">VSL — extrait page de vente (1 min)</p>
-        </a>
+        <div class="feature" data-animate>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M7 16a5 5 0 0 0 10 0" stroke="currentColor" stroke-width="1.5"/></svg>
+          <div><h3>Vidéos de vente (VSL)</h3><p class="muted">Structure persuasive, CTA clairs, rythme maîtrisé. Idéales pour pages de vente et pubs.</p></div>
+        </div>
+        <div class="feature" data-animate>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M9 7h6M9 12h6M9 17h4" stroke="currentColor" stroke-width="1.5"/></svg>
+          <div><h3>Réels & Shorts</h3><p class="muted">Formats 9:16, hooks forts, sous‑titres dynamiques. Pensés pour la viralité.</p></div>
+        </div>
+        <div class="feature" data-animate>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7Z" stroke="currentColor" stroke-width="1.5"/><path d="M10 9.5v5l4-2.5-4-2.5Z" fill="currentColor"/></svg>
+          <div><h3>YouTube (long format)</h3><p class="muted">Narration claire, B‑roll pertinent, titrage lisible. Optimisé watch‑time & SEO.</p></div>
+        </div>
       </div>
     </section>
 
-    <!-- ===== PROCESS ===== -->
-    <section id="process" class="container" aria-labelledby="title-process">
-      <h2 id="title-process" class="section-title">Processus</h2>
-      <p class="section-desc">Un flux clair, pour avancer vite sans surprises.</p>
-      <div class="grid grid-2 steps">
-        <div class="step"><h3>1. Brief & objectifs</h3><p class="muted">Cible, message, style. Partage des rushes et références. Définition des livrables et délais.</p></div>
-        <div class="step"><h3>2. Premier montage</h3><p class="muted">Structure + rythme + titrage. Lien privé pour visionnage et commentaires.</p></div>
-        <div class="step"><h3>3. Retours & ajustements</h3><p class="muted">Jusqu’à 2 cycles inclus. Corrections ciblées (fond & forme), étalonnage, audio.</p></div>
-        <div class="step"><h3>4. Export & livraison</h3><p class="muted">Exports optimisés (YouTube/Instagram/TikTok). Livraison des fichiers finaux et .srt.</p></div>
-      </div>
-    </section>
+    <!-- ================= REALISATIONS ================= -->
+    <section id="realisations" class="container" aria-labelledby="title-realisations">
+      <h2 id="title-realisations" class="section-title" data-animate>Mes réalisations</h2>
+      <p class="section-desc" data-animate>Extraits de projets récents — courtes et longues durées.</p>
 
-    <!-- ===== OUTILS ===== -->
-    <section id="outils" class="container" aria-labelledby="title-outils">
-      <h2 id="title-outils" class="section-title">Outils & compétences</h2>
+      <h3 class="section-title" style="font-size:1.2rem;opacity:.9" data-animate>Vidéos courtes</h3>
+      <div class="grid grid-3" style="margin-bottom:1rem">
+        <div class="card" data-animate>
+          <div class="media">
+            <iframe loading="lazy" src="https://player.vimeo.com/video/1029793468?title=0&byline=0&portrait=0&dnt=1" title="Réel/Shorts — Extrait 1" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen style="width:100%;height:100%;border:0"></iframe>
+          </div>
+          <p class="muted" style="margin-top:.6rem">Réel / Shorts — Extrait 1</p>
+        </div>
+        <div class="card" data-animate>
+          <div class="media">
+            <iframe loading="lazy" src="https://player.vimeo.com/video/1106994777?title=0&byline=0&portrait=0&dnt=1" title="Réel/Shorts — Extrait 2" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen style="width:100%;height:100%;border:0"></iframe>
+          </div>
+          <p class="muted" style="margin-top:.6rem">Réel / Shorts — Extrait 2</p>
+        </div>
+        <div class="card" data-animate>
+          <div class="media">
+            <iframe loading="lazy" src="https://player.vimeo.com/video/1106991787?title=0&byline=0&portrait=0&dnt=1" title="Réel/Shorts — Extrait 3" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen style="width:100%;height:100%;border:0"></iframe>
+          </div>
+          <p class="muted" style="margin-top:.6rem">Réel / Shorts — Extrait 3</p>
+        </div>
+      </div>
+
+      <h3 class="section-title" style="font-size:1.2rem;opacity:.9" data-animate>Vidéos longues</h3>
       <div class="grid grid-3">
-        <div class="feature" aria-label="Premiere Pro & After Effects">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5"/><path d="M7 9h6M7 12h4M7 15h5" stroke="currentColor" stroke-width="1.5"/></svg>
-          <div><h3>Premiere Pro & After Effects</h3><p class="muted">Montage avancé, motion sobre, templates titrage, transitions propres.</p></div>
+        <div class="card" data-animate>
+          <div class="media">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/2Vm_HIq4MK0" title="YouTube — Vidéo longue 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:0"></iframe>
+          </div>
+          <p class="muted" style="margin-top:.6rem">YouTube — Vidéo longue 1</p>
         </div>
-        <div class="feature" aria-label="DaVinci Resolve">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M7 16a5 5 0 0 0 10 0" stroke="currentColor" stroke-width="1.5"/></svg>
-          <div><h3>DaVinci Resolve</h3><p class="muted">Étalonnage, LUTs, correction colorimétrique, mixage audio.</p></div>
+        <div class="card" data-animate>
+          <div class="media">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/eqAV_pXIEOE" title="YouTube — Vidéo longue 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:0"></iframe>
+          </div>
+          <p class="muted" style="margin-top:.6rem">YouTube — Vidéo longue 2</p>
         </div>
-        <div class="feature" aria-label="Optimisations social media">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/></svg>
-          <div><h3>Social‑first</h3><p class="muted">Hooks 3 s, captions dynamiques, formats 9:16, A/B testing de miniatures.</p></div>
+        <div class="card" data-animate>
+          <div class="media">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/sV5ao9JZ-nM" title="YouTube — Vidéo longue 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:100%;border:0"></iframe>
+          </div>
+          <p class="muted" style="margin-top:.6rem">YouTube — Vidéo longue 3</p>
         </div>
-      </div>
-      <div class="badges" style="margin-top:1rem">
-        <span class="badge">Sous‑titres FR/EN</span>
-        <span class="badge">Nettoyage audio & musique</span>
-        <span class="badge">Templates & brand kit</span>
-        <span class="badge">Livraison en 48–72 h (selon projet)</span>
       </div>
     </section>
 
-    <!-- ===== TEMOIGNAGES ===== -->
-    <section aria-labelledby="title-avis" class="container">
-      <h2 id="title-avis" class="section-title">Témoignages</h2>
+    <!-- ================= TEMOIGNAGES ================= -->
+    <section id="temoignages" class="container" aria-labelledby="title-avis">
+      <h2 id="title-avis" class="section-title" data-animate>Témoignages</h2>
+      <p class="section-desc" data-animate>Ils parlent du rythme, de la clarté et des résultats. Quelques retours en vidéo :</p>
       <div class="grid grid-2">
-        <blockquote class="quote">« Travail ultra propre et réactif. Mes vidéos YouTube ont gagné en rythme et en clarté. »<footer>— Aïcha, créatrice</footer></blockquote>
-        <blockquote class="quote">« Nos Réels ont doublé en portée. Sous‑titres nickels et cuts précis. »<footer>— Jonas, e‑commerce</footer></blockquote>
+        <div class="card" data-animate>
+          <div class="media">
+            <iframe loading="lazy" src="https://player.vimeo.com/video/1013860145?title=0&byline=0&portrait=0&dnt=1" title="Témoignage client 1" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen style="width:100%;height:100%;border:0"></iframe>
+          </div>
+          <blockquote class="quote">« Travail ultra propre et réactif. Nos contenus sont devenus plus clairs et performants. »<footer>— Client • Créateur</footer></blockquote>
+        </div>
+        <div class="card" data-animate>
+          <div class="media">
+            <iframe loading="lazy" src="https://player.vimeo.com/video/1054102277?title=0&byline=0&portrait=0&dnt=1" title="Témoignage client 2" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen style="width:100%;height:100%;border:0"></iframe>
+          </div>
+          <blockquote class="quote">« Mes réels performent beaucoup mieux : captions propres, cuts précis, livraisons rapides. »<footer>— Client • Infopreneur</footer></blockquote>
+        </div>
       </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
+    <!-- ================= PROCESS ================= -->
+    <section id="process" class="container" aria-labelledby="title-process">
+      <h2 id="title-process" class="section-title" data-animate>Comment ça marche ?</h2>
+      <p class="section-desc" data-animate>Un flux clair en 5 étapes pour aller vite et bien — sans surprises.</p>
+      <div class="grid grid-2 steps">
+        <div class="step" data-animate><h3>1. Brief & objectifs</h3><p class="muted">Cible, message, style. Vous partagez vos rushes, votre charte et des exemples d’inspiration.</p></div>
+        <div class="step" data-animate><h3>2. Script & cadrage</h3><p class="muted">Si nécessaire : script/outline, placement des hooks et structuration du message.</p></div>
+        <div class="step" data-animate><h3>3. Montage & sound design</h3><p class="muted">Cuts précis, B‑roll, titrage lisible, étalonnage, nettoyage audio et musique/SFX.</p></div>
+        <div class="step" data-animate><h3>4. Retours & optimisations</h3><p class="muted">Jusqu’à 2 cycles d’allers‑retours. Ajustements sur rythme, transitions, CTA.</p></div>
+        <div class="step" data-animate><h3>5. Export & livraison</h3><p class="muted">Exports optimisés (YouTube, Instagram, TikTok) + sous‑titres (.srt) et fichiers finaux.</p></div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
     <section id="contact" class="container" aria-labelledby="title-contact">
-      <h2 id="title-contact" class="section-title">Contact</h2>
-      <p class="section-desc">Expliquez votre besoin (format, durée, échéance) et partagez un lien vers vos rushes si possible.</p>
-      <div class="card contact-card">
+      <h2 id="title-contact" class="section-title" data-animate>Contact</h2>
+      <p class="section-desc" data-animate>Expliquez votre besoin (format, durée, échéance) et envoyez un lien vers vos rushes si possible.</p>
+      <div class="card contact-card" data-animate>
         <div class="row">
-          <span class="chip">Email : <a href="mailto:contact@donaldediting.com">contact@donaldediting.com</a></span>
-          <span class="chip">WhatsApp : <a href="https://wa.me/22900000000" target="_blank" rel="noopener">+229 00 00 00 00</a></span>
-          <span class="chip">Instagram : <a href="#" target="_blank" rel="noopener">@donald.editing</a></span>
-          <span class="chip">YouTube : <a href="#" target="_blank" rel="noopener">Portfolio</a></span>
+          <span class="chip">Email : <a href="mailto:donaldeditingpro@gmail.com">donaldeditingpro@gmail.com</a></span>
+          <span class="chip">Téléphone : <a href="tel:+2290153823562">+229 0153823562</a></span>
+          <span class="chip">WhatsApp : <a href="https://wa.me/53823562" target="_blank" rel="noopener">wa.me/53823562</a></span>
+          <span class="chip">Instagram : <a href="https://www.instagram.com/donald_editing?igsh=MWNkd3d0b2JrZGwxYQ==" target="_blank" rel="noopener">@donald_editing</a></span>
+          <span class="chip">Facebook : <a href="https://www.facebook.com/profile.php?id=100075590696994&amp;mibextid=JRoKGi" target="_blank" rel="noopener">Donald AHOUANMADJO</a></span>
+          <span class="chip">YouTube : <a href="#realisations">Voir les vidéos</a></span>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ================= FOOTER ================= -->
   <footer>
     <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap">
-      <small>© <span id="y"></span> Donald Editing — Tous droits réservés</small>
+      <small>© <span id="y"></span> DONALD EDITING — Tous droits réservés</small>
       <small>Mentions légales • Politique de confidentialité</small>
     </div>
   </footer>
@@ -272,25 +317,41 @@
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Donald Editing",
-    "description": "Monteur vidéo freelance : YouTube, Réels, VSL, publicités.",
-    "areaServed": "Worldwide",
-    "url": "https://donaldediting.com/",
-    "sameAs": ["https://instagram.com/donald.editing"],
-    "contactPoint": {"@type": "ContactPoint","contactType": "customer service","email": "contact@donaldediting.com"}
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"DONALD EDITING",
+    "image":"https://donaldediting.com/wp-content/uploads/2025/08/cropped-profil-photo-2-scaled-1-300x300.jpg",
+    "description":"Monteur vidéo pro — VSL, Réels/Shorts, YouTube (long format). Vidéos qui retiennent, convainquent et vendent.",
+    "url":"https://donaldediting.com/",
+    "email":"mailto:donaldeditingpro@gmail.com",
+    "areaServed":"Worldwide",
+    "sameAs":[
+      "https://www.instagram.com/donald_editing",
+      "https://www.facebook.com/profile.php?id=100075590696994"
+    ],
+    "contactPoint":{
+      "@type":"ContactPoint",
+      "contactType":"customer service",
+      "telephone":"+2290153823562"
+    }
   }
   </script>
 
   <script>
     // Année courante
     document.getElementById('y').textContent = new Date().getFullYear();
-    // Nav active on scroll
+
+    // Nav active au scroll
     const sections=[...document.querySelectorAll('main section[id]')];
     const links=[...document.querySelectorAll('nav a[href^="#"]')];
     const setActive=()=>{let t=scrollY+100;let cur=sections.findLast(s=>s.offsetTop<=t);links.forEach(a=>a.removeAttribute('aria-current'));if(cur){let l=document.querySelector(`nav a[href="#${cur.id}"]`);if(l) l.setAttribute('aria-current','page')}}
     addEventListener('scroll',setActive,{passive:true});addEventListener('load',setActive);
+
+    // Révélations au scroll (animations douces)
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.12});
+    document.querySelectorAll('[data-animate]').forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
