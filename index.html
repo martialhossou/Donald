@@ -3,322 +3,294 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Donald Editing — Montage vidéo pro (YouTube, Réels, VSL)</title>
-  <meta name="description" content="Service de montage vidéo professionnel : YouTube, Réels/Shorts, vidéos de vente (VSL). Brief simple, délais rapides, résultat premium." />
-  <meta name="robots" content="index,follow" />
-  
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="Donald Editing — Montage vidéo pro" />
-  <meta property="og:description" content="YouTube, Réels, VSL. Brief simple, délais rapides, résultat premium." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://donaldediting.com/" />
-  <meta property="og:image" content="/cover.jpg" />
-
-  <!-- Favicon (à remplacer) -->
+  <title>Donald Editing — Monteur vidéo freelance (YouTube, Réels, VSL)</title>
+  <meta name="description" content="Monteur vidéo freelance : YouTube, Réels/Shorts, VSL, publicités et vidéos corporate. Délais rapides, sous‑titres dynamiques, exports optimisés 4K/1080p." />
   <link rel="icon" href="/favicon.ico" />
-
-  <!-- Styles de base, sobres et responsives (aucune dépendance externe) -->
   <style>
     :root {
-      --bg: #0b0c10;
-      --surface: #111217;
-      --muted: #9aa4b2;
-      --text: #e6eaf0;
-      --primary: #5da9ff; /* Couleur d'accent */
-      --accent: #7df2c5;  /* Accent secondaire (discret) */
-      --radius: 16px;
-      --maxw: 1100px;
-      --space: clamp(1rem, 2.2vw, 2rem);
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
+      --bg: #0a0c12;
+      --surface: #111423;
+      --muted: #a2adbd;
+      --text: #eaf0ff;
+      --primary: #67b2ff; /* accent */
+      --accent: #96f7d2;  /* accent secondaire */
+      --radius: 18px;
+      --maxw: 1160px;
+      --gap: clamp(1rem, 2vw, 1.2rem);
+      --pad: clamp(1rem, 3vw, 2rem);
+      --shadow: 0 10px 28px rgba(0,0,0,.25);
     }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;line-height:1.6;color:var(--text);background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(103,178,255,.12), transparent 60%),
+      radial-gradient(900px 500px at -10% 110%, rgba(150,247,210,.08), transparent 60%),
+      var(--bg)}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(100% - 2rem, var(--maxw));margin-inline:auto}
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--text); background: radial-gradient(1200px 600px at 70% -20%, rgba(93,169,255,.12), transparent 60%), var(--bg);
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(100% - 2rem, var(--maxw)); margin-inline: auto; }
+    /* ===== Header ===== */
+    header{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--surface) 74%, transparent);backdrop-filter:blur(10px) saturate(150%);border-bottom:1px solid rgba(255,255,255,.07)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.2px}
+    .brand svg{width:28px;height:28px}
+    nav ul{display:flex;align-items:center;gap:.6rem;margin:0;padding:0;list-style:none}
+    nav a{padding:.55rem .8rem;border-radius:999px;opacity:.9}
+    nav a:hover, nav a[aria-current="page"]{background:rgba(255,255,255,.08);opacity:1}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1rem;border-radius:999px;font-weight:800;background:linear-gradient(180deg,var(--primary),color-mix(in srgb,var(--primary),#000 18%));color:#07152a;border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow)}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 16px 36px rgba(103,178,255,.28)}
+    .btn.secondary{background:#151a2b;color:var(--text);box-shadow:none}
 
-    /* Header sticky avec flou */
-    header {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: saturate(140%) blur(8px);
-      background: color-mix(in srgb, var(--surface) 70%, transparent);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: .8rem 0;
-    }
-    .brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; letter-spacing: .3px; }
-    .brand svg { width: 28px; height: 28px; }
+    /* ===== Hero ===== */
+    .hero{padding:calc(var(--pad)*2.2) 0}
+    .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:var(--gap);align-items:center}
+    .eyebrow{color:var(--muted);font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:.8rem}
+    h1{font-size:clamp(2rem,4.8vw,3.2rem);line-height:1.12;margin:.5rem 0 1rem}
+    .lead{color:#cfe3ff;font-size:clamp(1rem,2.2vw,1.15rem);margin:0 0 1.1rem}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem}
+    .card{background:linear-gradient(180deg,color-mix(in srgb,var(--surface) 92%, transparent), color-mix(in srgb,var(--surface) 86%, transparent));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:1.1rem;box-shadow:var(--shadow)}
+    .media{aspect-ratio:16/9;border-radius:calc(var(--radius) - 8px);background:#0e1320;border:1px solid rgba(255,255,255,.06);overflow:hidden;display:grid;place-items:center}
+    .media img{width:100%;height:100%;object-fit:cover;display:block}
+    .media small{color:var(--muted)}
 
-    nav ul { display: flex; align-items: center; gap: 1rem; list-style: none; margin: 0; padding: 0; }
-    nav a { opacity: .85; padding: .5rem .7rem; border-radius: 999px; }
-    nav a:hover, nav a[aria-current="page"] { background: rgba(255,255,255,.06); opacity: 1; }
+    /* ===== Sections ===== */
+    section{padding:calc(var(--pad)*2) 0}
+    .section-title{font-size:clamp(1.35rem,3.2vw,1.9rem);margin:0 0 .6rem}
+    .section-desc{color:var(--muted);margin:0 0 1.2rem}
 
-    .btn {
-      display: inline-flex; align-items: center; gap: .5rem;
-      background: linear-gradient(180deg, var(--primary), color-mix(in srgb, var(--primary), #000 20%));
-      color: #081122; padding: .8rem 1rem; border-radius: 999px; font-weight: 700;
-      box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,.1);
-    }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 14px 34px rgba(93,169,255,.25); }
-    .btn.secondary { background: #1a2030; color: var(--text); border: 1px solid rgba(255,255,255,.12); box-shadow: none; }
+    .grid{display:grid;gap:var(--gap)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .feature{display:grid;grid-template-columns:48px 1fr;gap:.9rem;align-items:start;padding:1rem;border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);background:#0f1526}
+    .feature svg{width:32px;height:32px}
+    .muted{color:var(--muted)}
 
-    /* Hero */
-    .hero { padding: calc(var(--space)*2.2) 0; }
-    .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: var(--space); align-items: center; }
-    .eyebrow { color: var(--muted); font-weight: 600; letter-spacing: .2em; text-transform: uppercase; font-size: .8rem; }
-    h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; margin: .5rem 0 1rem; }
-    .lead { color: #c8d2e1; font-size: clamp(1rem, 2.2vw, 1.15rem); margin-bottom: 1.2rem; }
-    .hero-cta { display: flex; flex-wrap: wrap; gap: .8rem; }
+    /* Badges */
+    .badges{display:flex;flex-wrap:wrap;gap:.5rem}
+    .badge{padding:.4rem .7rem;border-radius:999px;background:#121a2d;border:1px solid rgba(255,255,255,.1);font-size:.92rem;color:#cdd9f6}
 
-    .card {
-      background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 94%, transparent), color-mix(in srgb, var(--surface) 86%, transparent));
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
-      padding: 1.2rem; box-shadow: var(--shadow);
-    }
-    .media { aspect-ratio: 16/10; border-radius: calc(var(--radius) - 6px); background: #0e111a; border: 1px solid rgba(255,255,255,.06); overflow: hidden; display: grid; place-items: center; }
-    .media small { color: var(--muted); }
+    /* Steps */
+    .steps{counter-reset:step}
+    .step{position:relative;padding:1.15rem;border:1px dashed rgba(255,255,255,.18);border-radius:var(--radius);background:#0f1526}
+    .step::before{counter-increment:step;content:counter(step);position:absolute;top:-12px;left:-12px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--primary);color:#07152a;font-weight:900;box-shadow:var(--shadow)}
 
-    /* Sections */
-    section { padding: calc(var(--space)*2) 0; }
-    section header { position: sticky; top: 0; backdrop-filter: none; background: none; border: 0; }
-    .section-title { font-size: clamp(1.3rem, 3vw, 1.8rem); margin: 0 0 .6rem; }
-    .section-desc { color: var(--muted); margin: 0 0 1.2rem; }
+    /* Quotes */
+    .quote{padding:1.1rem;border-left:4px solid var(--primary);background:#0f1526;border-radius:var(--radius)}
+    .quote footer{margin-top:.55rem;color:var(--muted)}
 
-    .grid { display: grid; gap: 1rem; }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-2 { grid-template-columns: repeat(2, 1fr); }
-
-    .feature { display: grid; grid-template-columns: 48px 1fr; align-items: start; gap: .8rem; padding: 1rem; border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); background: #0e1118; }
-    .feature svg { width: 32px; height: 32px; }
-    .muted { color: var(--muted); }
-
-    /* Processus */
-    .steps { counter-reset: step; }
-    .step { position: relative; padding: 1.2rem; border: 1px dashed rgba(255,255,255,.15); border-radius: var(--radius); background: #0e1118; }
-    .step::before {
-      counter-increment: step; content: counter(step);
-      position: absolute; top: -12px; left: -12px; width: 36px; height: 36px; border-radius: 50%;
-      display: grid; place-items: center; background: var(--primary); color: #081122; font-weight: 800; box-shadow: var(--shadow);
-    }
-
-    /* Témoignages */
-    .quote { padding: 1.2rem; border-left: 4px solid var(--primary); background: #0e1118; border-radius: var(--radius); }
-    .quote footer { margin-top: .6rem; color: var(--muted); }
+    /* Pricing (optionnel) */
+    .price{font-size:1.6rem;font-weight:900}
 
     /* Contact */
-    .contact-card { display: grid; gap: .8rem; }
-    .contact-row { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
-    .chip { padding: .45rem .7rem; border-radius: 999px; background: #111826; border: 1px solid rgba(255,255,255,.12); font-size: .95rem; }
+    .contact-card{display:grid;gap:.8rem}
+    .row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+    .chip{padding:.45rem .7rem;border-radius:999px;background:#121a2d;border:1px solid rgba(255,255,255,.1);font-size:.95rem}
 
     /* Footer */
-    footer { padding: 1.6rem 0 2.4rem; color: var(--muted); border-top: 1px solid rgba(255,255,255,.08); }
+    footer{padding:1.6rem 0 2.4rem;color:var(--muted);border-top:1px solid rgba(255,255,255,.1)}
 
     /* Responsive */
-    @media (max-width: 960px) {
-      .hero .wrap, .grid-3, .grid-2 { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 1024px){.wrap, .grid-3, .grid-2{grid-template-columns:1fr}}
   </style>
 </head>
-
 <body>
-  <!-- ================= HEADER ================= -->
+  <!-- ===== HEADER ===== -->
   <header>
     <div class="container nav" role="navigation" aria-label="Navigation principale">
       <a class="brand" href="#top" aria-label="Accueil Donald Editing">
-        <!-- Icône simple (caméra) -->
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M4 7a3 3 0 0 1 3-3h2l1-1h4l1 1h2a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7Z" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="12" cy="11" r="3.5" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 7a3 3 0 0 1 3-3h2l1-1h4l1 1h2a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7Z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="11" r="3.6" stroke="currentColor" stroke-width="1.5"/></svg>
         <span>Donald Editing</span>
       </a>
       <nav>
         <ul>
           <li><a href="#services">Services</a></li>
-          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#process">Processus</a></li>
+          <li><a href="#outils">Outils</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="btn" href="#contact">Demander un devis</a></li>
+          <li><a class="btn" href="#contact">Devis rapide</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
+  <!-- ===== HERO ===== -->
   <main id="top">
     <section class="hero container" aria-label="Section de bienvenue">
       <div class="wrap">
         <div>
-          <p class="eyebrow">Montage vidéo pro</p>
-          <h1>Boostez votre image avec des vidéos soignées et percutantes.</h1>
-          <p class="lead">YouTube, Réels/Shorts, vidéos de vente (VSL). Brief simple, délais rapides et rendu premium — pour créateurs, infopreneurs et marques.</p>
+          <p class="eyebrow">Monteur vidéo freelance</p>
+          <h1>Des vidéos qui retiennent l’attention et convertissent.</h1>
+          <p class="lead">YouTube long format, Réels/Shorts 9:16, VSL et publicités. <strong>Délais rapides</strong>, <strong>sous‑titres dynamiques</strong>, <strong>exports 4K/1080p</strong> et <strong>branding cohérent</strong>.</p>
           <div class="hero-cta">
-            <a href="#realisations" class="btn" aria-label="Voir mes réalisations">Voir mes réalisations</a>
-            <a href="#contact" class="btn secondary" aria-label="Me contacter">Me contacter</a>
+            <a href="#portfolio" class="btn" aria-label="Voir le portfolio">Voir le portfolio</a>
+            <a href="#contact" class="btn secondary" aria-label="Demander un devis">Demander un devis</a>
+          </div>
+          <div class="badges" style="margin-top:.9rem">
+            <span class="badge">YouTube</span>
+            <span class="badge">Instagram/TikTok</span>
+            <span class="badge">Publicités & VSL</span>
+            <span class="badge">Motion & Titres</span>
           </div>
         </div>
         <div class="card">
           <div class="media">
-            <!-- Remplacez par une image/vidéo de démonstration -->
-            <small>Prévisualisation du portfolio (image/vidéo)</small>
+            <img src="https://images.unsplash.com/photo-1581276879432-15a09f2f9c30?q=80&w=1600&auto=format&fit=crop" alt="Extraits de montages vidéo (mosaïque)"/>
           </div>
-          <p class="muted" style="margin-top:.8rem">Astuce : une courte vidéo de 20–30 s montrant 3–4 extraits (avant ➜ après) augmente fortement la conversion.</p>
+          <p class="muted" style="margin-top:.7rem">Aperçu : mosaïque d’extraits (avant ➜ après). Remplacez par votre reel démonstration.</p>
         </div>
       </div>
     </section>
 
-    <!-- ================= SERVICES ================= -->
+    <!-- ===== SERVICES ===== -->
     <section id="services" class="container" aria-labelledby="title-services">
-      <h2 id="title-services" class="section-title">Services principaux</h2>
-      <p class="section-desc">Des prestations claires, des livrables nets, des délais respectés.</p>
-
+      <h2 id="title-services" class="section-title">Services</h2>
+      <p class="section-desc">Des prestations claires, adaptées à vos objectifs et à votre audience.</p>
       <div class="grid grid-3">
         <article class="feature" aria-label="Montage YouTube">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7Z" stroke="currentColor" stroke-width="1.5"/><path d="M10 9.5v5l4-2.5-4-2.5Z" fill="currentColor"/></svg>
           <div>
             <h3>Montage YouTube</h3>
-            <p class="muted">Rythme maîtrisé, titrages soignés, B‑roll pertinent. Optimisé pour la rétention et la clarté du message.</p>
+            <p class="muted">Narration soignée, B‑roll pertinent, titrage lisible. Optimisé pour la rétention et le watch‑time.</p>
+            <p class="price">à partir de 50 000 F CFA</p>
           </div>
         </article>
-        <article class="feature" aria-label="Réels & Shorts">
+        <article class="feature" aria-label="Réels / Shorts">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M9 7h6M9 12h6M9 17h4" stroke="currentColor" stroke-width="1.5"/></svg>
           <div>
             <h3>Réels & Shorts</h3>
-            <p class="muted">Captions dynamiques, cuts rapides, formats 9:16. Pensé pour la viralité et la compréhension immédiate.</p>
+            <p class="muted">Formats 9:16, cuts rapides, sous‑titres animés. Pensé pour capter en 3 secondes et engager.</p>
+            <p class="price">à partir de 15 000 F CFA</p>
           </div>
         </article>
         <article class="feature" aria-label="Vidéos de vente (VSL)">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h8" stroke="currentColor" stroke-width="1.5"/><path d="M17 17v4l3-2-3-2Z" fill="currentColor"/></svg>
           <div>
             <h3>Vidéos de vente (VSL)</h3>
-            <p class="muted">Structure persuasive, CTA clairs, motion sobre. Idéales pour pages de vente et publicités.</p>
+            <p class="muted">Structure persuasive, CTA clairs, montages sobres orientés conversion pour pages et pubs.</p>
+            <p class="price">à partir de 80 000 F CFA</p>
           </div>
         </article>
       </div>
+      <div class="badges" style="margin-top:1rem">
+        <span class="badge">Livrables : 4K / 1080p • .mp4 H.264/H.265</span>
+        <span class="badge">Sous‑titres : intégrés & .srt</span>
+        <span class="badge">Musique & SFX libres de droits</span>
+        <span class="badge">2 cycles de retours inclus</span>
+      </div>
     </section>
 
-    <!-- ================= REALISATIONS ================= -->
-    <section id="realisations" class="container" aria-labelledby="title-realisations">
-      <h2 id="title-realisations" class="section-title">Réalisations récentes</h2>
-      <p class="section-desc">Un aperçu d'extraits (remplacez par vos propres médias).</p>
+    <!-- ===== PORTFOLIO ===== -->
+    <section id="portfolio" class="container" aria-labelledby="title-portfolio">
+      <h2 id="title-portfolio" class="section-title">Portfolio</h2>
+      <p class="section-desc">Sélection de projets récents — remplacez les vignettes par vos propres médias et liens.</p>
       <div class="grid grid-3">
-        <div class="card"><div class="media"><small>Miniature / vidéo 1</small></div><p class="muted">YouTube — Épisode éducatif</p></div>
-        <div class="card"><div class="media"><small>Miniature / vidéo 2</small></div><p class="muted">Réel — Capsule produit</p></div>
-        <div class="card"><div class="media"><small>Miniature / vidéo 3</small></div><p class="muted">VSL — Extrait page de vente</p></div>
+        <a class="card" href="#" aria-label="Voir la vidéo YouTube — tutoriel tech" target="_blank" rel="noopener">
+          <div class="media"><img src="https://images.unsplash.com/photo-1512412046876-f386342eddb3?q=80&w=1600&auto=format&fit=crop" alt="YouTube — tutoriel tech"/></div>
+          <p class="muted">YouTube — Tutoriel tech (12 min)</p>
+        </a>
+        <a class="card" href="#" aria-label="Voir le Réel produit" target="_blank" rel="noopener">
+          <div class="media"><img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1600&auto=format&fit=crop" alt="Réel produit format 9:16"/></div>
+          <p class="muted">Réel produit — 9:16 (25 s)</p>
+        </a>
+        <a class="card" href="#" aria-label="Voir l’extrait VSL" target="_blank" rel="noopener">
+          <div class="media"><img src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?q=80&w=1600&auto=format&fit=crop" alt="Extrait VSL pour page de vente"/></div>
+          <p class="muted">VSL — extrait page de vente (1 min)</p>
+        </a>
       </div>
     </section>
 
-    <!-- ================= PROCESS ================= -->
+    <!-- ===== PROCESS ===== -->
     <section id="process" class="container" aria-labelledby="title-process">
-      <h2 id="title-process" class="section-title">Mon processus en 4 étapes</h2>
-      <p class="section-desc">Simple, efficace et transparent — du brief à la livraison.</p>
+      <h2 id="title-process" class="section-title">Processus</h2>
+      <p class="section-desc">Un flux clair, pour avancer vite sans surprises.</p>
       <div class="grid grid-2 steps">
-        <div class="step">
-          <h3>1. Brief & objectifs</h3>
-          <p class="muted">Nous clarifions la cible, le message et le style. Vous partagez vos assets (rushes, logo, charte, exemples).
-          </p>
-        </div>
-        <div class="step">
-          <h3>2. Premier montage</h3>
-          <p class="muted">Je propose une première version (structure + rythme). Vous commentez directement dans un lien privé.
-          </p>
-        </div>
-        <div class="step">
-          <h3>3. Retours & ajustements</h3>
-          <p class="muted">Jusqu'à 2 cycles d'allers‑retours inclus, retouches ciblées sur le fond et la forme.
-          </p>
-        </div>
-        <div class="step">
-          <h3>4. Export & livraison</h3>
-          <p class="muted">Exports optimisés (YouTube, Instagram, TikTok) et livraison des fichiers finaux en HD.
-          </p>
-        </div>
+        <div class="step"><h3>1. Brief & objectifs</h3><p class="muted">Cible, message, style. Partage des rushes et références. Définition des livrables et délais.</p></div>
+        <div class="step"><h3>2. Premier montage</h3><p class="muted">Structure + rythme + titrage. Lien privé pour visionnage et commentaires.</p></div>
+        <div class="step"><h3>3. Retours & ajustements</h3><p class="muted">Jusqu’à 2 cycles inclus. Corrections ciblées (fond & forme), étalonnage, audio.</p></div>
+        <div class="step"><h3>4. Export & livraison</h3><p class="muted">Exports optimisés (YouTube/Instagram/TikTok). Livraison des fichiers finaux et .srt.</p></div>
       </div>
     </section>
 
-    <!-- ================= TEMOIGNAGES ================= -->
+    <!-- ===== OUTILS ===== -->
+    <section id="outils" class="container" aria-labelledby="title-outils">
+      <h2 id="title-outils" class="section-title">Outils & compétences</h2>
+      <div class="grid grid-3">
+        <div class="feature" aria-label="Premiere Pro & After Effects">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.5"/><path d="M7 9h6M7 12h4M7 15h5" stroke="currentColor" stroke-width="1.5"/></svg>
+          <div><h3>Premiere Pro & After Effects</h3><p class="muted">Montage avancé, motion sobre, templates titrage, transitions propres.</p></div>
+        </div>
+        <div class="feature" aria-label="DaVinci Resolve">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M7 16a5 5 0 0 0 10 0" stroke="currentColor" stroke-width="1.5"/></svg>
+          <div><h3>DaVinci Resolve</h3><p class="muted">Étalonnage, LUTs, correction colorimétrique, mixage audio.</p></div>
+        </div>
+        <div class="feature" aria-label="Optimisations social media">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/></svg>
+          <div><h3>Social‑first</h3><p class="muted">Hooks 3 s, captions dynamiques, formats 9:16, A/B testing de miniatures.</p></div>
+        </div>
+      </div>
+      <div class="badges" style="margin-top:1rem">
+        <span class="badge">Sous‑titres FR/EN</span>
+        <span class="badge">Nettoyage audio & musique</span>
+        <span class="badge">Templates & brand kit</span>
+        <span class="badge">Livraison en 48–72 h (selon projet)</span>
+      </div>
+    </section>
+
+    <!-- ===== TEMOIGNAGES ===== -->
     <section aria-labelledby="title-avis" class="container">
-      <h2 id="title-avis" class="section-title">Ils recommandent</h2>
+      <h2 id="title-avis" class="section-title">Témoignages</h2>
       <div class="grid grid-2">
-        <blockquote class="quote">
-          « Travail soigné, délais tenus, compréhension parfaite du brief. »
-          <footer>— Aïcha, créatrice de contenu</footer>
-        </blockquote>
-        <blockquote class="quote">
-          « Mes réels performent 3× mieux depuis que je travaille avec Donald. »
-          <footer>— Jonas, e‑commerçant</footer>
-        </blockquote>
+        <blockquote class="quote">« Travail ultra propre et réactif. Mes vidéos YouTube ont gagné en rythme et en clarté. »<footer>— Aïcha, créatrice</footer></blockquote>
+        <blockquote class="quote">« Nos Réels ont doublé en portée. Sous‑titres nickels et cuts précis. »<footer>— Jonas, e‑commerce</footer></blockquote>
       </div>
     </section>
 
-    <!-- ================= CONTACT ================= -->
+    <!-- ===== CONTACT ===== -->
     <section id="contact" class="container" aria-labelledby="title-contact">
       <h2 id="title-contact" class="section-title">Contact</h2>
-      <p class="section-desc">Prêt à donner vie à vos idées ? Écrivez‑moi un message ou demandez un devis.</p>
+      <p class="section-desc">Expliquez votre besoin (format, durée, échéance) et partagez un lien vers vos rushes si possible.</p>
       <div class="card contact-card">
-        <div class="contact-row">
+        <div class="row">
           <span class="chip">Email : <a href="mailto:contact@donaldediting.com">contact@donaldediting.com</a></span>
           <span class="chip">WhatsApp : <a href="https://wa.me/22900000000" target="_blank" rel="noopener">+229 00 00 00 00</a></span>
           <span class="chip">Instagram : <a href="#" target="_blank" rel="noopener">@donald.editing</a></span>
+          <span class="chip">YouTube : <a href="#" target="_blank" rel="noopener">Portfolio</a></span>
         </div>
-        <p class="muted">Indiquez le type de vidéo, la durée visée, l’échéance et un lien vers vos rushes si possible.</p>
       </div>
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- ===== FOOTER ===== -->
   <footer>
-    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:.8rem; flex-wrap:wrap;">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap">
       <small>© <span id="y"></span> Donald Editing — Tous droits réservés</small>
       <small>Mentions légales • Politique de confidentialité</small>
     </div>
   </footer>
 
-  <!-- Micro‑données Schema.org (LocalBusiness) -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Donald Editing",
-    "description": "Montage vidéo professionnel: YouTube, Réels/Shorts, VSL.",
+    "description": "Monteur vidéo freelance : YouTube, Réels, VSL, publicités.",
     "areaServed": "Worldwide",
     "url": "https://donaldediting.com/",
     "sameAs": ["https://instagram.com/donald.editing"],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "contact@donaldediting.com"
-    }
+    "contactPoint": {"@type": "ContactPoint","contactType": "customer service","email": "contact@donaldediting.com"}
   }
   </script>
 
-  <!-- Script utilitaire: année dynamique & état lien actif -->
   <script>
     // Année courante
     document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Lien actif en fonction du scroll
-    const sections = [...document.querySelectorAll('main section[id]')];
-    const links = [...document.querySelectorAll('nav a[href^="#"]')];
-    const setActive = () => {
-      let fromTop = scrollY + 100;
-      let current = sections.findLast(s => s.offsetTop <= fromTop);
-      links.forEach(a => a.removeAttribute('aria-current'));
-      if (current) {
-        const link = document.querySelector(`nav a[href="#${current.id}"]`);
-        if (link) link.setAttribute('aria-current', 'page');
-      }
-    };
-    addEventListener('scroll', setActive, { passive: true });
-    addEventListener('load', setActive);
+    // Nav active on scroll
+    const sections=[...document.querySelectorAll('main section[id]')];
+    const links=[...document.querySelectorAll('nav a[href^="#"]')];
+    const setActive=()=>{let t=scrollY+100;let cur=sections.findLast(s=>s.offsetTop<=t);links.forEach(a=>a.removeAttribute('aria-current'));if(cur){let l=document.querySelector(`nav a[href="#${cur.id}"]`);if(l) l.setAttribute('aria-current','page')}}
+    addEventListener('scroll',setActive,{passive:true});addEventListener('load',setActive);
   </script>
 </body>
 </html>
