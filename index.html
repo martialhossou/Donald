@@ -1,172 +1,324 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Donald Editing — Montage Vidéo</title>
-  <meta name="description" content="Monteur vidéo spécialisé dans la création de contenus dynamiques qui captivent et engagent." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donald Editing — Montage vidéo pro (YouTube, Réels, VSL)</title>
+  <meta name="description" content="Service de montage vidéo professionnel : YouTube, Réels/Shorts, vidéos de vente (VSL). Brief simple, délais rapides, résultat premium." />
+  <meta name="robots" content="index,follow" />
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Donald Editing — Montage vidéo pro" />
+  <meta property="og:description" content="YouTube, Réels, VSL. Brief simple, délais rapides, résultat premium." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://donaldediting.com/" />
+  <meta property="og:image" content="/cover.jpg" />
+
+  <!-- Favicon (à remplacer) -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Styles de base, sobres et responsives (aucune dépendance externe) -->
   <style>
-    :root{
-      --bg: #000;             /* fond noir */
+    :root {
+      --bg: #0b0c10;
       --surface: #111217;
-      --text: #f5f7fb;
-      --muted: #a9afc1;
-      --accent: #00cfff;      /* bleu ciel */
-      --border: #23242c;
-      --radius: 14px;
+      --muted: #9aa4b2;
+      --text: #e6eaf0;
+      --primary: #5da9ff; /* Couleur d'accent */
+      --accent: #7df2c5;  /* Accent secondaire (discret) */
+      --radius: 16px;
+      --maxw: 1100px;
+      --space: clamp(1rem, 2.2vw, 2rem);
       --shadow: 0 10px 30px rgba(0,0,0,.25);
-      --maxw: 1200px;
-      --g: clamp(16px, 2vw, 28px);
-      --pad: clamp(16px, 4vw, 56px);
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:Inter, sans-serif; background:var(--bg); color:var(--text); line-height:1.6;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text); background: radial-gradient(1200px 600px at 70% -20%, rgba(93,169,255,.12), transparent 60%), var(--bg);
+      line-height: 1.6;
     }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;height:auto;display:block}
-    .container{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(100% - 2rem, var(--maxw)); margin-inline: auto; }
 
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(0,0,0,.85);border-bottom:1px solid rgba(255,255,255,.08);
-      backdrop-filter:blur(12px);
+    /* Header sticky avec flou */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(140%) blur(8px);
+      background: color-mix(in srgb, var(--surface) 70%, transparent);
+      border-bottom: 1px solid rgba(255,255,255,.06);
     }
-    .nav{height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{font-weight:800;letter-spacing:.2px}
-    nav a{color:var(--muted);margin-left:16px;font-weight:600}
-    .cta{
-      display:inline-block;padding:12px 18px;border-radius:10px;
-      background:var(--accent);color:#111;font-weight:700;transition:.2s;
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .8rem 0;
     }
-    .cta:hover{opacity:.9}
+    .brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; letter-spacing: .3px; }
+    .brand svg { width: 28px; height: 28px; }
 
-    section{padding: clamp(48px, 8vw, 96px) 0}
-    h1,h2{font-weight:800;margin-bottom:12px}
-    h1{font-size:clamp(28px,5vw,54px)}
-    h2{font-size:clamp(22px,3.5vw,36px)}
-    p.lead{color:var(--muted);max-width:65ch}
+    nav ul { display: flex; align-items: center; gap: 1rem; list-style: none; margin: 0; padding: 0; }
+    nav a { opacity: .85; padding: .5rem .7rem; border-radius: 999px; }
+    nav a:hover, nav a[aria-current="page"] { background: rgba(255,255,255,.06); opacity: 1; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: linear-gradient(180deg, var(--primary), color-mix(in srgb, var(--primary), #000 20%));
+      color: #081122; padding: .8rem 1rem; border-radius: 999px; font-weight: 700;
+      box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,.1);
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 14px 34px rgba(93,169,255,.25); }
+    .btn.secondary { background: #1a2030; color: var(--text); border: 1px solid rgba(255,255,255,.12); box-shadow: none; }
 
     /* Hero */
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--g)}
-    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
-    .video{aspect-ratio:16/9;width:100%;border-radius:12px;border:1px solid var(--border);overflow:hidden;background:#000}
+    .hero { padding: calc(var(--space)*2.2) 0; }
+    .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: var(--space); align-items: center; }
+    .eyebrow { color: var(--muted); font-weight: 600; letter-spacing: .2em; text-transform: uppercase; font-size: .8rem; }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; margin: .5rem 0 1rem; }
+    .lead { color: #c8d2e1; font-size: clamp(1rem, 2.2vw, 1.15rem); margin-bottom: 1.2rem; }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: .8rem; }
 
-    /* Cards */
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--g);margin-top:24px}
-    .card{background:#111;border:1px solid var(--border);padding:24px;border-radius:var(--radius);transition:.2s}
-    .card:hover{transform:translateY(-4px)}
-    .card .kicker{color:var(--accent);font-size:13px;font-weight:700;margin-bottom:6px}
-    .card p{color:var(--muted)}
+    .card {
+      background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 94%, transparent), color-mix(in srgb, var(--surface) 86%, transparent));
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      padding: 1.2rem; box-shadow: var(--shadow);
+    }
+    .media { aspect-ratio: 16/10; border-radius: calc(var(--radius) - 6px); background: #0e111a; border: 1px solid rgba(255,255,255,.06); overflow: hidden; display: grid; place-items: center; }
+    .media small { color: var(--muted); }
 
-    /* Grid Portfolio */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--g);margin-top:24px}
-    .tile{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--border)}
-    .tile .meta{position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.6);padding:6px 12px;border-radius:8px}
+    /* Sections */
+    section { padding: calc(var(--space)*2) 0; }
+    section header { position: sticky; top: 0; backdrop-filter: none; background: none; border: 0; }
+    .section-title { font-size: clamp(1.3rem, 3vw, 1.8rem); margin: 0 0 .6rem; }
+    .section-desc { color: var(--muted); margin: 0 0 1.2rem; }
+
+    .grid { display: grid; gap: 1rem; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+    .feature { display: grid; grid-template-columns: 48px 1fr; align-items: start; gap: .8rem; padding: 1rem; border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); background: #0e1118; }
+    .feature svg { width: 32px; height: 32px; }
+    .muted { color: var(--muted); }
+
+    /* Processus */
+    .steps { counter-reset: step; }
+    .step { position: relative; padding: 1.2rem; border: 1px dashed rgba(255,255,255,.15); border-radius: var(--radius); background: #0e1118; }
+    .step::before {
+      counter-increment: step; content: counter(step);
+      position: absolute; top: -12px; left: -12px; width: 36px; height: 36px; border-radius: 50%;
+      display: grid; place-items: center; background: var(--primary); color: #081122; font-weight: 800; box-shadow: var(--shadow);
+    }
+
+    /* Témoignages */
+    .quote { padding: 1.2rem; border-left: 4px solid var(--primary); background: #0e1118; border-radius: var(--radius); }
+    .quote footer { margin-top: .6rem; color: var(--muted); }
 
     /* Contact */
-    form{display:grid;gap:16px;margin-top:20px}
-    input,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:10px;background:#0f1015;color:var(--text)}
-    button{border:none}
+    .contact-card { display: grid; gap: .8rem; }
+    .contact-row { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+    .chip { padding: .45rem .7rem; border-radius: 999px; background: #111826; border: 1px solid rgba(255,255,255,.12); font-size: .95rem; }
 
-    footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted);text-align:center}
+    /* Footer */
+    footer { padding: 1.6rem 0 2.4rem; color: var(--muted); border-top: 1px solid rgba(255,255,255,.08); }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero .wrap, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
+
 <body>
-
-<header>
-  <div class="container nav">
-    <div class="brand">Donald Editing</div>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="cta" href="#contact">Demander un devis</a>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <h1>Donald Editing, monteur vidéo spécialisé dans la création de contenus dynamiques qui captivent et engagent.</h1>
-      <p class="lead">Depuis 2023, j’accompagne marques et créateurs pour transformer des idées en vidéos percutantes : Reels, Shorts, YouTube, publicités.</p>
-      <div style="margin-top:20px">
-        <a class="cta" href="#portfolio">Voir le portfolio</a>
-      </div>
+  <!-- ================= HEADER ================= -->
+  <header>
+    <div class="container nav" role="navigation" aria-label="Navigation principale">
+      <a class="brand" href="#top" aria-label="Accueil Donald Editing">
+        <!-- Icône simple (caméra) -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 7a3 3 0 0 1 3-3h2l1-1h4l1 1h2a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7Z" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="12" cy="11" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <span>Donald Editing</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#realisations">Réalisations</a></li>
+          <li><a href="#process">Processus</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn" href="#contact">Demander un devis</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="video">
-      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Showreel" frameborder="0" allowfullscreen></iframe>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <main id="top">
+    <section class="hero container" aria-label="Section de bienvenue">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow">Montage vidéo pro</p>
+          <h1>Boostez votre image avec des vidéos soignées et percutantes.</h1>
+          <p class="lead">YouTube, Réels/Shorts, vidéos de vente (VSL). Brief simple, délais rapides et rendu premium — pour créateurs, infopreneurs et marques.</p>
+          <div class="hero-cta">
+            <a href="#realisations" class="btn" aria-label="Voir mes réalisations">Voir mes réalisations</a>
+            <a href="#contact" class="btn secondary" aria-label="Me contacter">Me contacter</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="media">
+            <!-- Remplacez par une image/vidéo de démonstration -->
+            <small>Prévisualisation du portfolio (image/vidéo)</small>
+          </div>
+          <p class="muted" style="margin-top:.8rem">Astuce : une courte vidéo de 20–30 s montrant 3–4 extraits (avant ➜ après) augmente fortement la conversion.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section id="services" class="container" aria-labelledby="title-services">
+      <h2 id="title-services" class="section-title">Services principaux</h2>
+      <p class="section-desc">Des prestations claires, des livrables nets, des délais respectés.</p>
+
+      <div class="grid grid-3">
+        <article class="feature" aria-label="Montage YouTube">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7Z" stroke="currentColor" stroke-width="1.5"/><path d="M10 9.5v5l4-2.5-4-2.5Z" fill="currentColor"/></svg>
+          <div>
+            <h3>Montage YouTube</h3>
+            <p class="muted">Rythme maîtrisé, titrages soignés, B‑roll pertinent. Optimisé pour la rétention et la clarté du message.</p>
+          </div>
+        </article>
+        <article class="feature" aria-label="Réels & Shorts">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M9 7h6M9 12h6M9 17h4" stroke="currentColor" stroke-width="1.5"/></svg>
+          <div>
+            <h3>Réels & Shorts</h3>
+            <p class="muted">Captions dynamiques, cuts rapides, formats 9:16. Pensé pour la viralité et la compréhension immédiate.</p>
+          </div>
+        </article>
+        <article class="feature" aria-label="Vidéos de vente (VSL)">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h8" stroke="currentColor" stroke-width="1.5"/><path d="M17 17v4l3-2-3-2Z" fill="currentColor"/></svg>
+          <div>
+            <h3>Vidéos de vente (VSL)</h3>
+            <p class="muted">Structure persuasive, CTA clairs, motion sobre. Idéales pour pages de vente et publicités.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= REALISATIONS ================= -->
+    <section id="realisations" class="container" aria-labelledby="title-realisations">
+      <h2 id="title-realisations" class="section-title">Réalisations récentes</h2>
+      <p class="section-desc">Un aperçu d'extraits (remplacez par vos propres médias).</p>
+      <div class="grid grid-3">
+        <div class="card"><div class="media"><small>Miniature / vidéo 1</small></div><p class="muted">YouTube — Épisode éducatif</p></div>
+        <div class="card"><div class="media"><small>Miniature / vidéo 2</small></div><p class="muted">Réel — Capsule produit</p></div>
+        <div class="card"><div class="media"><small>Miniature / vidéo 3</small></div><p class="muted">VSL — Extrait page de vente</p></div>
+      </div>
+    </section>
+
+    <!-- ================= PROCESS ================= -->
+    <section id="process" class="container" aria-labelledby="title-process">
+      <h2 id="title-process" class="section-title">Mon processus en 4 étapes</h2>
+      <p class="section-desc">Simple, efficace et transparent — du brief à la livraison.</p>
+      <div class="grid grid-2 steps">
+        <div class="step">
+          <h3>1. Brief & objectifs</h3>
+          <p class="muted">Nous clarifions la cible, le message et le style. Vous partagez vos assets (rushes, logo, charte, exemples).
+          </p>
+        </div>
+        <div class="step">
+          <h3>2. Premier montage</h3>
+          <p class="muted">Je propose une première version (structure + rythme). Vous commentez directement dans un lien privé.
+          </p>
+        </div>
+        <div class="step">
+          <h3>3. Retours & ajustements</h3>
+          <p class="muted">Jusqu'à 2 cycles d'allers‑retours inclus, retouches ciblées sur le fond et la forme.
+          </p>
+        </div>
+        <div class="step">
+          <h3>4. Export & livraison</h3>
+          <p class="muted">Exports optimisés (YouTube, Instagram, TikTok) et livraison des fichiers finaux en HD.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TEMOIGNAGES ================= -->
+    <section aria-labelledby="title-avis" class="container">
+      <h2 id="title-avis" class="section-title">Ils recommandent</h2>
+      <div class="grid grid-2">
+        <blockquote class="quote">
+          « Travail soigné, délais tenus, compréhension parfaite du brief. »
+          <footer>— Aïcha, créatrice de contenu</footer>
+        </blockquote>
+        <blockquote class="quote">
+          « Mes réels performent 3× mieux depuis que je travaille avec Donald. »
+          <footer>— Jonas, e‑commerçant</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="container" aria-labelledby="title-contact">
+      <h2 id="title-contact" class="section-title">Contact</h2>
+      <p class="section-desc">Prêt à donner vie à vos idées ? Écrivez‑moi un message ou demandez un devis.</p>
+      <div class="card contact-card">
+        <div class="contact-row">
+          <span class="chip">Email : <a href="mailto:contact@donaldediting.com">contact@donaldediting.com</a></span>
+          <span class="chip">WhatsApp : <a href="https://wa.me/22900000000" target="_blank" rel="noopener">+229 00 00 00 00</a></span>
+          <span class="chip">Instagram : <a href="#" target="_blank" rel="noopener">@donald.editing</a></span>
+        </div>
+        <p class="muted">Indiquez le type de vidéo, la durée visée, l’échéance et un lien vers vos rushes si possible.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:.8rem; flex-wrap:wrap;">
+      <small>© <span id="y"></span> Donald Editing — Tous droits réservés</small>
+      <small>Mentions légales • Politique de confidentialité</small>
     </div>
-  </div>
-</section>
+  </footer>
 
-<section id="services">
-  <div class="container">
-    <h2>Services</h2>
-    <p class="lead">Des prestations de montage claires et efficaces.</p>
-    <div class="cards">
-      <div class="card">
-        <div class="kicker">Montage Social</div>
-        <h3>Reels • Shorts • TikTok</h3>
-        <p>Rythme accrocheur, sous-titres stylés, transitions fluides pour maximiser la rétention.</p>
-      </div>
-      <div class="card">
-        <div class="kicker">YouTube</div>
-        <h3>Vlogs • Interviews • Émissions</h3>
-        <p>Structure claire, habillage graphique léger, confort de visionnage premium.</p>
-      </div>
-      <div class="card">
-        <div class="kicker">Business</div>
-        <h3>Ads • Corporate • Événementiel</h3>
-        <p>Formats orientés résultats : ventes, rendez-vous, notoriété.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- Micro‑données Schema.org (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Donald Editing",
+    "description": "Montage vidéo professionnel: YouTube, Réels/Shorts, VSL.",
+    "areaServed": "Worldwide",
+    "url": "https://donaldediting.com/",
+    "sameAs": ["https://instagram.com/donald.editing"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "contact@donaldediting.com"
+    }
+  }
+  </script>
 
-<section id="portfolio">
-  <div class="container">
-    <h2>Portfolio</h2>
-    <p class="lead">Sélection de projets récents.</p>
-    <div class="grid">
-      <div class="tile">
-        <img src="https://images.unsplash.com/photo-1516251193007-45ef944ab0c6?q=80&w=1400" alt="">
-        <div class="meta">Projet 1</div>
-      </div>
-      <div class="tile">
-        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1400" alt="">
-        <div class="meta">Projet 2</div>
-      </div>
-      <div class="tile">
-        <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?q=80&w=1400" alt="">
-        <div class="meta">Projet 3</div>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- Script utilitaire: année dynamique & état lien actif -->
+  <script>
+    // Année courante
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-<section id="contact">
-  <div class="container">
-    <h2>Contact</h2>
-    <p class="lead">Parlez-moi de votre projet. Réponse sous 24h.</p>
-    <form>
-      <input type="text" name="name" placeholder="Votre nom" required>
-      <input type="email" name="email" placeholder="Votre email" required>
-      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-      <button class="cta" type="submit">Envoyer</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    © <span id="year"></span> Donald Editing — Tous droits réservés.
-  </div>
-</footer>
-
-<script>document.getElementById("year").textContent=new Date().getFullYear()</script>
+    // Lien actif en fonction du scroll
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const links = [...document.querySelectorAll('nav a[href^="#"]')];
+    const setActive = () => {
+      let fromTop = scrollY + 100;
+      let current = sections.findLast(s => s.offsetTop <= fromTop);
+      links.forEach(a => a.removeAttribute('aria-current'));
+      if (current) {
+        const link = document.querySelector(`nav a[href="#${current.id}"]`);
+        if (link) link.setAttribute('aria-current', 'page');
+      }
+    };
+    addEventListener('scroll', setActive, { passive: true });
+    addEventListener('load', setActive);
+  </script>
 </body>
 </html>
